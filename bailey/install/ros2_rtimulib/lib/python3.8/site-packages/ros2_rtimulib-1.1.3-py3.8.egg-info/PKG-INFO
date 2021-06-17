@@ -1,0 +1,12 @@
+Metadata-Version: 1.2
+Name: ros2-rtimulib
+Version: 1.1.3
+Summary: A package to publish IMU messages from an rtimulib-compatible sensor. The package publish teh following messages: "/imu", "/temp" and "/press"
+Home-page: UNKNOWN
+Author: Kurt Kiefer
+Maintainer: Kurt Kiefer
+Maintainer-email: kekiefer@gmail.com
+License: MIT
+Description: UNKNOWN
+Keywords: ROS2
+Platform: UNKNOWN

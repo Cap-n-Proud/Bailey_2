@@ -1,0 +1,52 @@
+[2.077s] Invoking command in '/home/paolo/NAS/Software/ROS2/Bailey/bailey/src/camera': PYTHONPATH=/home/paolo/NAS/Software/ROS2/Bailey/bailey/install/camera/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/camera build --build-base /home/paolo/NAS/Software/ROS2/Bailey/bailey/build/camera/build install --prefix /home/paolo/NAS/Software/ROS2/Bailey/bailey/install/camera --record /home/paolo/NAS/Software/ROS2/Bailey/bailey/build/camera/install.log --single-version-externally-managed
+[2.530s] running egg_info
+[2.531s] creating ../../build/camera/camera.egg-info
+[2.538s] writing ../../build/camera/camera.egg-info/PKG-INFO
+[2.572s] writing dependency_links to ../../build/camera/camera.egg-info/dependency_links.txt
+[2.587s] writing entry points to ../../build/camera/camera.egg-info/entry_points.txt
+[2.598s] writing requirements to ../../build/camera/camera.egg-info/requires.txt
+[2.608s] writing top-level names to ../../build/camera/camera.egg-info/top_level.txt
+[2.625s] writing manifest file '../../build/camera/camera.egg-info/SOURCES.txt'
+[2.719s] reading manifest file '../../build/camera/camera.egg-info/SOURCES.txt'
+[2.737s] writing manifest file '../../build/camera/camera.egg-info/SOURCES.txt'
+[2.747s] running build
+[2.748s] running build_py
+[2.753s] creating /home/paolo/NAS/Software/ROS2/Bailey/bailey/build/camera/build
+[2.755s] creating /home/paolo/NAS/Software/ROS2/Bailey/bailey/build/camera/build/lib
+[2.760s] creating /home/paolo/NAS/Software/ROS2/Bailey/bailey/build/camera/build/lib/camera
+[2.767s] copying camera/overlay_lib.py -> /home/paolo/NAS/Software/ROS2/Bailey/bailey/build/camera/build/lib/camera
+[2.793s] copying camera/debounce.py -> /home/paolo/NAS/Software/ROS2/Bailey/bailey/build/camera/build/lib/camera
+[2.824s] copying camera/log.py -> /home/paolo/NAS/Software/ROS2/Bailey/bailey/build/camera/build/lib/camera
+[2.855s] copying camera/server.py -> /home/paolo/NAS/Software/ROS2/Bailey/bailey/build/camera/build/lib/camera
+[2.881s] copying camera/imu_utils.py -> /home/paolo/NAS/Software/ROS2/Bailey/bailey/build/camera/build/lib/camera
+[2.906s] copying camera/__init__.py -> /home/paolo/NAS/Software/ROS2/Bailey/bailey/build/camera/build/lib/camera
+[2.927s] copying camera/camera.py -> /home/paolo/NAS/Software/ROS2/Bailey/bailey/build/camera/build/lib/camera
+[2.957s] running install
+[2.959s] running install_lib
+[2.976s] creating /home/paolo/NAS/Software/ROS2/Bailey/bailey/install/camera/lib/python3.8/site-packages/camera
+[2.983s] copying /home/paolo/NAS/Software/ROS2/Bailey/bailey/build/camera/build/lib/camera/__init__.py -> /home/paolo/NAS/Software/ROS2/Bailey/bailey/install/camera/lib/python3.8/site-packages/camera
+[3.003s] copying /home/paolo/NAS/Software/ROS2/Bailey/bailey/build/camera/build/lib/camera/imu_utils.py -> /home/paolo/NAS/Software/ROS2/Bailey/bailey/install/camera/lib/python3.8/site-packages/camera
+[3.032s] copying /home/paolo/NAS/Software/ROS2/Bailey/bailey/build/camera/build/lib/camera/server.py -> /home/paolo/NAS/Software/ROS2/Bailey/bailey/install/camera/lib/python3.8/site-packages/camera
+[3.063s] copying /home/paolo/NAS/Software/ROS2/Bailey/bailey/build/camera/build/lib/camera/overlay_lib.py -> /home/paolo/NAS/Software/ROS2/Bailey/bailey/install/camera/lib/python3.8/site-packages/camera
+[3.095s] copying /home/paolo/NAS/Software/ROS2/Bailey/bailey/build/camera/build/lib/camera/debounce.py -> /home/paolo/NAS/Software/ROS2/Bailey/bailey/install/camera/lib/python3.8/site-packages/camera
+[3.125s] copying /home/paolo/NAS/Software/ROS2/Bailey/bailey/build/camera/build/lib/camera/camera.py -> /home/paolo/NAS/Software/ROS2/Bailey/bailey/install/camera/lib/python3.8/site-packages/camera
+[3.154s] copying /home/paolo/NAS/Software/ROS2/Bailey/bailey/build/camera/build/lib/camera/log.py -> /home/paolo/NAS/Software/ROS2/Bailey/bailey/install/camera/lib/python3.8/site-packages/camera
+[3.201s] byte-compiling /home/paolo/NAS/Software/ROS2/Bailey/bailey/install/camera/lib/python3.8/site-packages/camera/__init__.py to __init__.cpython-38.pyc
+[3.240s] byte-compiling /home/paolo/NAS/Software/ROS2/Bailey/bailey/install/camera/lib/python3.8/site-packages/camera/imu_utils.py to imu_utils.cpython-38.pyc
+[3.280s] byte-compiling /home/paolo/NAS/Software/ROS2/Bailey/bailey/install/camera/lib/python3.8/site-packages/camera/server.py to server.cpython-38.pyc
+[3.317s] byte-compiling /home/paolo/NAS/Software/ROS2/Bailey/bailey/install/camera/lib/python3.8/site-packages/camera/overlay_lib.py to overlay_lib.cpython-38.pyc
+[3.364s] byte-compiling /home/paolo/NAS/Software/ROS2/Bailey/bailey/install/camera/lib/python3.8/site-packages/camera/debounce.py to debounce.cpython-38.pyc
+[3.400s] byte-compiling /home/paolo/NAS/Software/ROS2/Bailey/bailey/install/camera/lib/python3.8/site-packages/camera/camera.py to camera.cpython-38.pyc
+[3.434s] byte-compiling /home/paolo/NAS/Software/ROS2/Bailey/bailey/install/camera/lib/python3.8/site-packages/camera/log.py to log.cpython-38.pyc
+[3.465s] running install_data
+[3.472s] creating /home/paolo/NAS/Software/ROS2/Bailey/bailey/install/camera/share/ament_index
+[3.473s] creating /home/paolo/NAS/Software/ROS2/Bailey/bailey/install/camera/share/ament_index/resource_index
+[3.476s] creating /home/paolo/NAS/Software/ROS2/Bailey/bailey/install/camera/share/ament_index/resource_index/packages
+[3.486s] copying resource/camera -> /home/paolo/NAS/Software/ROS2/Bailey/bailey/install/camera/share/ament_index/resource_index/packages
+[3.506s] copying package.xml -> /home/paolo/NAS/Software/ROS2/Bailey/bailey/install/camera/share/camera
+[3.529s] running install_egg_info
+[3.542s] Copying ../../build/camera/camera.egg-info to /home/paolo/NAS/Software/ROS2/Bailey/bailey/install/camera/lib/python3.8/site-packages/camera-1.0.0-py3.8.egg-info
+[4.106s] running install_scripts
+[4.178s] Installing ros2_camera script to /home/paolo/NAS/Software/ROS2/Bailey/bailey/install/camera/lib/camera
+[4.702s] writing list of installed files to '/home/paolo/NAS/Software/ROS2/Bailey/bailey/build/camera/install.log'
+[5.248s] Invoked command in '/home/paolo/NAS/Software/ROS2/Bailey/bailey/src/camera' returned '0': PYTHONPATH=/home/paolo/NAS/Software/ROS2/Bailey/bailey/install/camera/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/camera build --build-base /home/paolo/NAS/Software/ROS2/Bailey/bailey/build/camera/build install --prefix /home/paolo/NAS/Software/ROS2/Bailey/bailey/install/camera --record /home/paolo/NAS/Software/ROS2/Bailey/bailey/build/camera/install.log --single-version-externally-managed

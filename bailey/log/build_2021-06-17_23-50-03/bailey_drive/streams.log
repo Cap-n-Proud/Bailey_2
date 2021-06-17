@@ -1,0 +1,17 @@
+[0.618s] Invoking command in '/home/paolo/NAS/Software/ROS2/Bailey/bailey/build/bailey_drive': PYTHONPATH=/home/paolo/NAS/Software/ROS2/Bailey/bailey/install/bailey_drive/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py develop --prefix /home/paolo/NAS/Software/ROS2/Bailey/bailey/install/bailey_drive --editable --build-directory /home/paolo/NAS/Software/ROS2/Bailey/bailey/build/bailey_drive/build --no-deps install_data --install-dir /home/paolo/NAS/Software/ROS2/Bailey/bailey/install/bailey_drive
+[0.894s] running develop
+[1.094s] running egg_info
+[1.097s] writing bailey_drive.egg-info/PKG-INFO
+[1.120s] writing dependency_links to bailey_drive.egg-info/dependency_links.txt
+[1.138s] writing entry points to bailey_drive.egg-info/entry_points.txt
+[1.155s] writing requirements to bailey_drive.egg-info/requires.txt
+[1.169s] writing top-level names to bailey_drive.egg-info/top_level.txt
+[1.279s] reading manifest file 'bailey_drive.egg-info/SOURCES.txt'
+[1.309s] writing manifest file 'bailey_drive.egg-info/SOURCES.txt'
+[1.369s] running build_ext
+[1.374s] Creating /home/paolo/NAS/Software/ROS2/Bailey/bailey/install/bailey_drive/lib/python3.8/site-packages/bailey-drive.egg-link (link to .)
+[1.410s] Installing ros2_bailey_drive script to /home/paolo/NAS/Software/ROS2/Bailey/bailey/install/bailey_drive/lib/bailey_drive
+[1.432s] 
+[1.433s] Installed /home/paolo/NAS/Software/ROS2/Bailey/bailey/build/bailey_drive
+[1.440s] running install_data
+[1.501s] Invoked command in '/home/paolo/NAS/Software/ROS2/Bailey/bailey/build/bailey_drive' returned '0': PYTHONPATH=/home/paolo/NAS/Software/ROS2/Bailey/bailey/install/bailey_drive/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py develop --prefix /home/paolo/NAS/Software/ROS2/Bailey/bailey/install/bailey_drive --editable --build-directory /home/paolo/NAS/Software/ROS2/Bailey/bailey/build/bailey_drive/build --no-deps install_data --install-dir /home/paolo/NAS/Software/ROS2/Bailey/bailey/install/bailey_drive

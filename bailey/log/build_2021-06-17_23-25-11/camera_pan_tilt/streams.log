@@ -1,0 +1,33 @@
+[2.112s] Invoking command in '/home/paolo/NAS/Software/ROS2/Bailey/bailey/src/camera_pan_tilt': PYTHONPATH=/home/paolo/NAS/Software/ROS2/Bailey/bailey/install/camera_pan_tilt/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/camera_pan_tilt build --build-base /home/paolo/NAS/Software/ROS2/Bailey/bailey/build/camera_pan_tilt/build install --prefix /home/paolo/NAS/Software/ROS2/Bailey/bailey/install/camera_pan_tilt --record /home/paolo/NAS/Software/ROS2/Bailey/bailey/build/camera_pan_tilt/install.log --single-version-externally-managed
+[2.382s] running egg_info
+[2.384s] creating ../../build/camera_pan_tilt/camera_pan_tilt.egg-info
+[2.387s] writing ../../build/camera_pan_tilt/camera_pan_tilt.egg-info/PKG-INFO
+[2.418s] writing dependency_links to ../../build/camera_pan_tilt/camera_pan_tilt.egg-info/dependency_links.txt
+[2.433s] writing entry points to ../../build/camera_pan_tilt/camera_pan_tilt.egg-info/entry_points.txt
+[2.446s] writing requirements to ../../build/camera_pan_tilt/camera_pan_tilt.egg-info/requires.txt
+[2.459s] writing top-level names to ../../build/camera_pan_tilt/camera_pan_tilt.egg-info/top_level.txt
+[2.480s] writing manifest file '../../build/camera_pan_tilt/camera_pan_tilt.egg-info/SOURCES.txt'
+[2.600s] reading manifest file '../../build/camera_pan_tilt/camera_pan_tilt.egg-info/SOURCES.txt'
+[2.617s] writing manifest file '../../build/camera_pan_tilt/camera_pan_tilt.egg-info/SOURCES.txt'
+[2.628s] running build
+[2.628s] running build_py
+[2.635s] creating /home/paolo/NAS/Software/ROS2/Bailey/bailey/build/camera_pan_tilt/build
+[2.636s] creating /home/paolo/NAS/Software/ROS2/Bailey/bailey/build/camera_pan_tilt/build/lib
+[2.643s] creating /home/paolo/NAS/Software/ROS2/Bailey/bailey/build/camera_pan_tilt/build/lib/camera_pan_tilt
+[2.652s] copying camera_pan_tilt/__init__.py -> /home/paolo/NAS/Software/ROS2/Bailey/bailey/build/camera_pan_tilt/build/lib/camera_pan_tilt
+[2.667s] running install
+[2.668s] running install_lib
+[2.685s] creating /home/paolo/NAS/Software/ROS2/Bailey/bailey/install/camera_pan_tilt/lib/python3.8/site-packages/camera_pan_tilt
+[2.691s] copying /home/paolo/NAS/Software/ROS2/Bailey/bailey/build/camera_pan_tilt/build/lib/camera_pan_tilt/__init__.py -> /home/paolo/NAS/Software/ROS2/Bailey/bailey/install/camera_pan_tilt/lib/python3.8/site-packages/camera_pan_tilt
+[2.722s] byte-compiling /home/paolo/NAS/Software/ROS2/Bailey/bailey/install/camera_pan_tilt/lib/python3.8/site-packages/camera_pan_tilt/__init__.py to __init__.cpython-38.pyc
+[2.753s] running install_data
+[2.761s] creating /home/paolo/NAS/Software/ROS2/Bailey/bailey/install/camera_pan_tilt/share/ament_index
+[2.763s] creating /home/paolo/NAS/Software/ROS2/Bailey/bailey/install/camera_pan_tilt/share/ament_index/resource_index
+[2.767s] creating /home/paolo/NAS/Software/ROS2/Bailey/bailey/install/camera_pan_tilt/share/ament_index/resource_index/packages
+[2.779s] copying resource/camera_pan_tilt -> /home/paolo/NAS/Software/ROS2/Bailey/bailey/install/camera_pan_tilt/share/ament_index/resource_index/packages
+[2.802s] copying package.xml -> /home/paolo/NAS/Software/ROS2/Bailey/bailey/install/camera_pan_tilt/share/camera_pan_tilt
+[2.823s] running install_egg_info
+[2.839s] Copying ../../build/camera_pan_tilt/camera_pan_tilt.egg-info to /home/paolo/NAS/Software/ROS2/Bailey/bailey/install/camera_pan_tilt/lib/python3.8/site-packages/camera_pan_tilt-0.0.0-py3.8.egg-info
+[3.080s] running install_scripts
+[3.135s] writing list of installed files to '/home/paolo/NAS/Software/ROS2/Bailey/bailey/build/camera_pan_tilt/install.log'
+[4.466s] Invoked command in '/home/paolo/NAS/Software/ROS2/Bailey/bailey/src/camera_pan_tilt' returned '0': PYTHONPATH=/home/paolo/NAS/Software/ROS2/Bailey/bailey/install/camera_pan_tilt/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/camera_pan_tilt build --build-base /home/paolo/NAS/Software/ROS2/Bailey/bailey/build/camera_pan_tilt/build install --prefix /home/paolo/NAS/Software/ROS2/Bailey/bailey/install/camera_pan_tilt --record /home/paolo/NAS/Software/ROS2/Bailey/bailey/build/camera_pan_tilt/install.log --single-version-externally-managed

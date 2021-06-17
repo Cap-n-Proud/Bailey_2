@@ -1,0 +1,310 @@
+[0.000000] (-) TimerEvent: {}
+[0.000120] (bailey_drive) JobQueued: {'identifier': 'bailey_drive', 'dependencies': OrderedDict()}
+[0.000162] (camera) JobQueued: {'identifier': 'camera', 'dependencies': OrderedDict()}
+[0.000198] (camera_pan_tilt) JobQueued: {'identifier': 'camera_pan_tilt', 'dependencies': OrderedDict()}
+[0.000220] (jetbot_sys_info) JobQueued: {'identifier': 'jetbot_sys_info', 'dependencies': OrderedDict()}
+[0.000240] (ros2_rtimulib) JobQueued: {'identifier': 'ros2_rtimulib', 'dependencies': OrderedDict()}
+[0.000261] (bailey_drive) JobStarted: {'identifier': 'bailey_drive'}
+[0.098109] (-) TimerEvent: {}
+[0.186416] (camera) JobStarted: {'identifier': 'camera'}
+[0.198282] (-) TimerEvent: {}
+[0.299163] (-) TimerEvent: {}
+[0.400747] (-) TimerEvent: {}
+[0.421713] (camera_pan_tilt) JobStarted: {'identifier': 'camera_pan_tilt'}
+[0.500731] (-) TimerEvent: {}
+[0.579788] (jetbot_sys_info) JobStarted: {'identifier': 'jetbot_sys_info'}
+[0.600936] (-) TimerEvent: {}
+[0.701709] (-) TimerEvent: {}
+[0.802491] (-) TimerEvent: {}
+[0.902952] (-) TimerEvent: {}
+[1.003244] (-) TimerEvent: {}
+[1.103709] (-) TimerEvent: {}
+[1.204251] (-) TimerEvent: {}
+[1.304752] (-) TimerEvent: {}
+[1.405462] (-) TimerEvent: {}
+[1.506769] (-) TimerEvent: {}
+[1.607062] (-) TimerEvent: {}
+[1.707500] (-) TimerEvent: {}
+[1.808280] (-) TimerEvent: {}
+[1.908559] (-) TimerEvent: {}
+[2.008827] (-) TimerEvent: {}
+[2.109560] (-) TimerEvent: {}
+[2.111731] (bailey_drive) Command: {'cmd': ['/usr/bin/python3', 'setup.py', 'egg_info', '--egg-base', '../../build/bailey_drive', 'build', '--build-base', '/home/paolo/NAS/Software/ROS2/Bailey/bailey/build/bailey_drive/build', 'install', '--prefix', '/home/paolo/NAS/Software/ROS2/Bailey/bailey/install/bailey_drive', '--record', '/home/paolo/NAS/Software/ROS2/Bailey/bailey/build/bailey_drive/install.log', '--single-version-externally-managed'], 'cwd': '/home/paolo/NAS/Software/ROS2/Bailey/bailey/src/bailey_drive', 'env': {'GJS_DEBUG_TOPICS': 'JS ERROR;JS LOG', 'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'paolo', 'LC_TIME': 'de_CH.UTF-8', 'SSH_AGENT_PID': '2157', 'XDG_SESSION_TYPE': 'x11', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/foxy/opt/yaml_cpp_vendor/lib:/opt/ros/foxy/opt/rviz_ogre_vendor/lib:/opt/ros/foxy/lib/x86_64-linux-gnu:/opt/ros/foxy/lib', 'HOME': '/home/paolo', 'OLDPWD': '/home/paolo', 'DESKTOP_SESSION': 'ubuntu', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'LC_MONETARY': 'de_CH.UTF-8', 'MANAGERPID': '1971', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'MANDATORY_PATH': '/usr/share/gconf/ubuntu.mandatory.path', 'IM_CONFIG_PHASE': '1', 'COLCON_PREFIX_PATH': '/home/paolo/NAS/Software/ROS2/Bailey/bailey/install', 'ROS_DISTRO': 'foxy', 'LOGNAME': 'paolo', 'JOURNAL_STREAM': '8:58001', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'DEFAULTS_PATH': '/usr/share/gconf/ubuntu.default.path', 'USERNAME': 'paolo', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'ROS_LOCALHOST_ONLY': '0', 'WINDOWPATH': '2', 'PATH': '/opt/ros/foxy/bin:/home/paolo/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin', 'SESSION_MANAGER': 'local/kenobi:@/tmp/.ICE-unix/2205,unix/kenobi:/tmp/.ICE-unix/2205', 'INVOCATION_ID': 'd9117a4b51cd4b53b6924325a68dc683', 'XDG_MENU_PREFIX': 'gnome-', 'LC_ADDRESS': 'de_CH.UTF-8', 'GNOME_TERMINAL_SCREEN': '/org/gnome/Terminal/screen/0669a680_31c0_470e_8b69_35d45a1191cb', 'XDG_RUNTIME_DIR': '/run/user/1000', 'DISPLAY': ':0', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'LC_TELEPHONE': 'de_CH.UTF-8', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/gdm/Xauthority', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'GNOME_TERMINAL_SERVICE': ':1.106', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'AMENT_PREFIX_PATH': '/opt/ros/foxy', 'SHELL': '/bin/bash', 'LC_NAME': 'de_CH.UTF-8', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'LC_MEASUREMENT': 'de_CH.UTF-8', 'GPG_AGENT_INFO': '/run/user/1000/gnupg/S.gpg-agent:0:1', 'GJS_DEBUG_OUTPUT': 'stderr', 'LC_IDENTIFICATION': 'de_CH.UTF-8', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/paolo/NAS/Software/ROS2/Bailey/bailey/build/bailey_drive', 'LC_ALL': 'en_US.UTF-8', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/paolo/NAS/Software/ROS2/Bailey/bailey/install/bailey_drive/lib/python3.8/site-packages:/opt/ros/foxy/lib/python3.8/site-packages', 'LC_NUMERIC': 'de_CH.UTF-8', 'LC_PAPER': 'de_CH.UTF-8', 'COLCON': '1', 'VTE_VERSION': '6003'}, 'shell': False}
+[2.209748] (-) TimerEvent: {}
+[2.211460] (camera) Command: {'cmd': ['/usr/bin/python3', 'setup.py', 'egg_info', '--egg-base', '../../build/camera', 'build', '--build-base', '/home/paolo/NAS/Software/ROS2/Bailey/bailey/build/camera/build', 'install', '--prefix', '/home/paolo/NAS/Software/ROS2/Bailey/bailey/install/camera', '--record', '/home/paolo/NAS/Software/ROS2/Bailey/bailey/build/camera/install.log', '--single-version-externally-managed'], 'cwd': '/home/paolo/NAS/Software/ROS2/Bailey/bailey/src/camera', 'env': {'GJS_DEBUG_TOPICS': 'JS ERROR;JS LOG', 'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'paolo', 'LC_TIME': 'de_CH.UTF-8', 'SSH_AGENT_PID': '2157', 'XDG_SESSION_TYPE': 'x11', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/foxy/opt/yaml_cpp_vendor/lib:/opt/ros/foxy/opt/rviz_ogre_vendor/lib:/opt/ros/foxy/lib/x86_64-linux-gnu:/opt/ros/foxy/lib', 'HOME': '/home/paolo', 'OLDPWD': '/home/paolo', 'DESKTOP_SESSION': 'ubuntu', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'LC_MONETARY': 'de_CH.UTF-8', 'MANAGERPID': '1971', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'MANDATORY_PATH': '/usr/share/gconf/ubuntu.mandatory.path', 'IM_CONFIG_PHASE': '1', 'COLCON_PREFIX_PATH': '/home/paolo/NAS/Software/ROS2/Bailey/bailey/install', 'ROS_DISTRO': 'foxy', 'LOGNAME': 'paolo', 'JOURNAL_STREAM': '8:58001', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'DEFAULTS_PATH': '/usr/share/gconf/ubuntu.default.path', 'USERNAME': 'paolo', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'ROS_LOCALHOST_ONLY': '0', 'WINDOWPATH': '2', 'PATH': '/opt/ros/foxy/bin:/home/paolo/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin', 'SESSION_MANAGER': 'local/kenobi:@/tmp/.ICE-unix/2205,unix/kenobi:/tmp/.ICE-unix/2205', 'INVOCATION_ID': 'd9117a4b51cd4b53b6924325a68dc683', 'XDG_MENU_PREFIX': 'gnome-', 'LC_ADDRESS': 'de_CH.UTF-8', 'GNOME_TERMINAL_SCREEN': '/org/gnome/Terminal/screen/0669a680_31c0_470e_8b69_35d45a1191cb', 'XDG_RUNTIME_DIR': '/run/user/1000', 'DISPLAY': ':0', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'LC_TELEPHONE': 'de_CH.UTF-8', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/gdm/Xauthority', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'GNOME_TERMINAL_SERVICE': ':1.106', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'AMENT_PREFIX_PATH': '/opt/ros/foxy', 'SHELL': '/bin/bash', 'LC_NAME': 'de_CH.UTF-8', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'LC_MEASUREMENT': 'de_CH.UTF-8', 'GPG_AGENT_INFO': '/run/user/1000/gnupg/S.gpg-agent:0:1', 'GJS_DEBUG_OUTPUT': 'stderr', 'LC_IDENTIFICATION': 'de_CH.UTF-8', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/paolo/NAS/Software/ROS2/Bailey/bailey/build/camera', 'LC_ALL': 'en_US.UTF-8', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/paolo/NAS/Software/ROS2/Bailey/bailey/install/camera/lib/python3.8/site-packages:/opt/ros/foxy/lib/python3.8/site-packages', 'LC_NUMERIC': 'de_CH.UTF-8', 'LC_PAPER': 'de_CH.UTF-8', 'COLCON': '1', 'VTE_VERSION': '6003'}, 'shell': False}
+[2.370090] (-) TimerEvent: {}
+[2.477142] (camera_pan_tilt) Command: {'cmd': ['/usr/bin/python3', 'setup.py', 'egg_info', '--egg-base', '../../build/camera_pan_tilt', 'build', '--build-base', '/home/paolo/NAS/Software/ROS2/Bailey/bailey/build/camera_pan_tilt/build', 'install', '--prefix', '/home/paolo/NAS/Software/ROS2/Bailey/bailey/install/camera_pan_tilt', '--record', '/home/paolo/NAS/Software/ROS2/Bailey/bailey/build/camera_pan_tilt/install.log', '--single-version-externally-managed'], 'cwd': '/home/paolo/NAS/Software/ROS2/Bailey/bailey/src/camera_pan_tilt', 'env': {'GJS_DEBUG_TOPICS': 'JS ERROR;JS LOG', 'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'paolo', 'LC_TIME': 'de_CH.UTF-8', 'SSH_AGENT_PID': '2157', 'XDG_SESSION_TYPE': 'x11', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/foxy/opt/yaml_cpp_vendor/lib:/opt/ros/foxy/opt/rviz_ogre_vendor/lib:/opt/ros/foxy/lib/x86_64-linux-gnu:/opt/ros/foxy/lib', 'HOME': '/home/paolo', 'OLDPWD': '/home/paolo', 'DESKTOP_SESSION': 'ubuntu', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'LC_MONETARY': 'de_CH.UTF-8', 'MANAGERPID': '1971', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'MANDATORY_PATH': '/usr/share/gconf/ubuntu.mandatory.path', 'IM_CONFIG_PHASE': '1', 'COLCON_PREFIX_PATH': '/home/paolo/NAS/Software/ROS2/Bailey/bailey/install', 'ROS_DISTRO': 'foxy', 'LOGNAME': 'paolo', 'JOURNAL_STREAM': '8:58001', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'DEFAULTS_PATH': '/usr/share/gconf/ubuntu.default.path', 'USERNAME': 'paolo', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'ROS_LOCALHOST_ONLY': '0', 'WINDOWPATH': '2', 'PATH': '/opt/ros/foxy/bin:/home/paolo/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin', 'SESSION_MANAGER': 'local/kenobi:@/tmp/.ICE-unix/2205,unix/kenobi:/tmp/.ICE-unix/2205', 'INVOCATION_ID': 'd9117a4b51cd4b53b6924325a68dc683', 'XDG_MENU_PREFIX': 'gnome-', 'LC_ADDRESS': 'de_CH.UTF-8', 'GNOME_TERMINAL_SCREEN': '/org/gnome/Terminal/screen/0669a680_31c0_470e_8b69_35d45a1191cb', 'XDG_RUNTIME_DIR': '/run/user/1000', 'DISPLAY': ':0', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'LC_TELEPHONE': 'de_CH.UTF-8', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/gdm/Xauthority', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'GNOME_TERMINAL_SERVICE': ':1.106', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'AMENT_PREFIX_PATH': '/opt/ros/foxy', 'SHELL': '/bin/bash', 'LC_NAME': 'de_CH.UTF-8', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'LC_MEASUREMENT': 'de_CH.UTF-8', 'GPG_AGENT_INFO': '/run/user/1000/gnupg/S.gpg-agent:0:1', 'GJS_DEBUG_OUTPUT': 'stderr', 'LC_IDENTIFICATION': 'de_CH.UTF-8', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/paolo/NAS/Software/ROS2/Bailey/bailey/build/camera_pan_tilt', 'LC_ALL': 'en_US.UTF-8', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/paolo/NAS/Software/ROS2/Bailey/bailey/install/camera_pan_tilt/lib/python3.8/site-packages:/opt/ros/foxy/lib/python3.8/site-packages', 'LC_NUMERIC': 'de_CH.UTF-8', 'LC_PAPER': 'de_CH.UTF-8', 'COLCON': '1', 'VTE_VERSION': '6003'}, 'shell': False}
+[2.534183] (-) TimerEvent: {}
+[2.534333] (bailey_drive) StdoutLine: {'line': b'running egg_info\n'}
+[2.534449] (bailey_drive) StdoutLine: {'line': b'creating ../../build/bailey_drive/bailey_drive.egg-info\n'}
+[2.539045] (bailey_drive) StdoutLine: {'line': b'writing ../../build/bailey_drive/bailey_drive.egg-info/PKG-INFO\n'}
+[2.559661] (jetbot_sys_info) Command: {'cmd': ['/usr/bin/python3', 'setup.py', 'egg_info', '--egg-base', '../../build/jetbot_sys_info', 'build', '--build-base', '/home/paolo/NAS/Software/ROS2/Bailey/bailey/build/jetbot_sys_info/build', 'install', '--prefix', '/home/paolo/NAS/Software/ROS2/Bailey/bailey/install/jetbot_sys_info', '--record', '/home/paolo/NAS/Software/ROS2/Bailey/bailey/build/jetbot_sys_info/install.log', '--single-version-externally-managed'], 'cwd': '/home/paolo/NAS/Software/ROS2/Bailey/bailey/src/jetbot_sys_info', 'env': {'GJS_DEBUG_TOPICS': 'JS ERROR;JS LOG', 'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'paolo', 'LC_TIME': 'de_CH.UTF-8', 'SSH_AGENT_PID': '2157', 'XDG_SESSION_TYPE': 'x11', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/foxy/opt/yaml_cpp_vendor/lib:/opt/ros/foxy/opt/rviz_ogre_vendor/lib:/opt/ros/foxy/lib/x86_64-linux-gnu:/opt/ros/foxy/lib', 'HOME': '/home/paolo', 'OLDPWD': '/home/paolo', 'DESKTOP_SESSION': 'ubuntu', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'LC_MONETARY': 'de_CH.UTF-8', 'MANAGERPID': '1971', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'MANDATORY_PATH': '/usr/share/gconf/ubuntu.mandatory.path', 'IM_CONFIG_PHASE': '1', 'COLCON_PREFIX_PATH': '/home/paolo/NAS/Software/ROS2/Bailey/bailey/install', 'ROS_DISTRO': 'foxy', 'LOGNAME': 'paolo', 'JOURNAL_STREAM': '8:58001', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'DEFAULTS_PATH': '/usr/share/gconf/ubuntu.default.path', 'USERNAME': 'paolo', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'ROS_LOCALHOST_ONLY': '0', 'WINDOWPATH': '2', 'PATH': '/opt/ros/foxy/bin:/home/paolo/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin', 'SESSION_MANAGER': 'local/kenobi:@/tmp/.ICE-unix/2205,unix/kenobi:/tmp/.ICE-unix/2205', 'INVOCATION_ID': 'd9117a4b51cd4b53b6924325a68dc683', 'XDG_MENU_PREFIX': 'gnome-', 'LC_ADDRESS': 'de_CH.UTF-8', 'GNOME_TERMINAL_SCREEN': '/org/gnome/Terminal/screen/0669a680_31c0_470e_8b69_35d45a1191cb', 'XDG_RUNTIME_DIR': '/run/user/1000', 'DISPLAY': ':0', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'LC_TELEPHONE': 'de_CH.UTF-8', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/gdm/Xauthority', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'GNOME_TERMINAL_SERVICE': ':1.106', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'AMENT_PREFIX_PATH': '/opt/ros/foxy', 'SHELL': '/bin/bash', 'LC_NAME': 'de_CH.UTF-8', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'LC_MEASUREMENT': 'de_CH.UTF-8', 'GPG_AGENT_INFO': '/run/user/1000/gnupg/S.gpg-agent:0:1', 'GJS_DEBUG_OUTPUT': 'stderr', 'LC_IDENTIFICATION': 'de_CH.UTF-8', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/paolo/NAS/Software/ROS2/Bailey/bailey/build/jetbot_sys_info', 'LC_ALL': 'en_US.UTF-8', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/paolo/NAS/Software/ROS2/Bailey/bailey/install/jetbot_sys_info/lib/python3.8/site-packages:/opt/ros/foxy/lib/python3.8/site-packages', 'LC_NUMERIC': 'de_CH.UTF-8', 'LC_PAPER': 'de_CH.UTF-8', 'COLCON': '1', 'VTE_VERSION': '6003'}, 'shell': False}
+[2.587928] (bailey_drive) StdoutLine: {'line': b'writing dependency_links to ../../build/bailey_drive/bailey_drive.egg-info/dependency_links.txt\n'}
+[2.591859] (bailey_drive) StdoutLine: {'line': b'writing entry points to ../../build/bailey_drive/bailey_drive.egg-info/entry_points.txt\n'}
+[2.598539] (bailey_drive) StdoutLine: {'line': b'writing requirements to ../../build/bailey_drive/bailey_drive.egg-info/requires.txt\n'}
+[2.606951] (bailey_drive) StdoutLine: {'line': b'writing top-level names to ../../build/bailey_drive/bailey_drive.egg-info/top_level.txt\n'}
+[2.625212] (bailey_drive) StdoutLine: {'line': b"writing manifest file '../../build/bailey_drive/bailey_drive.egg-info/SOURCES.txt'\n"}
+[2.634300] (-) TimerEvent: {}
+[2.716762] (camera) StdoutLine: {'line': b'running egg_info\n'}
+[2.717870] (camera) StdoutLine: {'line': b'creating ../../build/camera/camera.egg-info\n'}
+[2.724404] (camera) StdoutLine: {'line': b'writing ../../build/camera/camera.egg-info/PKG-INFO\n'}
+[2.734388] (-) TimerEvent: {}
+[2.735722] (bailey_drive) StdoutLine: {'line': b"reading manifest file '../../build/bailey_drive/bailey_drive.egg-info/SOURCES.txt'\n"}
+[2.748645] (bailey_drive) StdoutLine: {'line': b"writing manifest file '../../build/bailey_drive/bailey_drive.egg-info/SOURCES.txt'\n"}
+[2.757666] (bailey_drive) StdoutLine: {'line': b'running build\n'}
+[2.757894] (bailey_drive) StdoutLine: {'line': b'running build_py\n'}
+[2.758017] (camera) StdoutLine: {'line': b'writing dependency_links to ../../build/camera/camera.egg-info/dependency_links.txt\n'}
+[2.767318] (bailey_drive) StdoutLine: {'line': b'creating /home/paolo/NAS/Software/ROS2/Bailey/bailey/build/bailey_drive/build\n'}
+[2.769427] (bailey_drive) StdoutLine: {'line': b'creating /home/paolo/NAS/Software/ROS2/Bailey/bailey/build/bailey_drive/build/lib\n'}
+[2.773269] (bailey_drive) StdoutLine: {'line': b'creating /home/paolo/NAS/Software/ROS2/Bailey/bailey/build/bailey_drive/build/lib/bailey_drive\n'}
+[2.773519] (camera) StdoutLine: {'line': b'writing entry points to ../../build/camera/camera.egg-info/entry_points.txt\n'}
+[2.784737] (camera) StdoutLine: {'line': b'writing requirements to ../../build/camera/camera.egg-info/requires.txt\n'}
+[2.786740] (bailey_drive) StdoutLine: {'line': b'copying bailey_drive/__init__.py -> /home/paolo/NAS/Software/ROS2/Bailey/bailey/build/bailey_drive/build/lib/bailey_drive\n'}
+[2.794217] (camera) StdoutLine: {'line': b'writing top-level names to ../../build/camera/camera.egg-info/top_level.txt\n'}
+[2.803542] (camera_pan_tilt) StdoutLine: {'line': b'running egg_info\n'}
+[2.805908] (camera_pan_tilt) StdoutLine: {'line': b'creating ../../build/camera_pan_tilt/camera_pan_tilt.egg-info\n'}
+[2.807138] (bailey_drive) StdoutLine: {'line': b'copying bailey_drive/debounce.py -> /home/paolo/NAS/Software/ROS2/Bailey/bailey/build/bailey_drive/build/lib/bailey_drive\n'}
+[2.809191] (camera_pan_tilt) StdoutLine: {'line': b'writing ../../build/camera_pan_tilt/camera_pan_tilt.egg-info/PKG-INFO\n'}
+[2.810932] (camera) StdoutLine: {'line': b"writing manifest file '../../build/camera/camera.egg-info/SOURCES.txt'\n"}
+[2.834480] (-) TimerEvent: {}
+[2.835495] (bailey_drive) StdoutLine: {'line': b'copying bailey_drive/bailey_drive.py -> /home/paolo/NAS/Software/ROS2/Bailey/bailey/build/bailey_drive/build/lib/bailey_drive\n'}
+[2.839792] (camera_pan_tilt) StdoutLine: {'line': b'writing dependency_links to ../../build/camera_pan_tilt/camera_pan_tilt.egg-info/dependency_links.txt\n'}
+[2.855043] (camera_pan_tilt) StdoutLine: {'line': b'writing entry points to ../../build/camera_pan_tilt/camera_pan_tilt.egg-info/entry_points.txt\n'}
+[2.855554] (bailey_drive) StdoutLine: {'line': b'running install\n'}
+[2.856953] (bailey_drive) StdoutLine: {'line': b'running install_lib\n'}
+[2.867335] (camera_pan_tilt) StdoutLine: {'line': b'writing requirements to ../../build/camera_pan_tilt/camera_pan_tilt.egg-info/requires.txt\n'}
+[2.870568] (bailey_drive) StdoutLine: {'line': b'creating /home/paolo/NAS/Software/ROS2/Bailey/bailey/install/bailey_drive/lib/python3.8/site-packages/bailey_drive\n'}
+[2.876477] (bailey_drive) StdoutLine: {'line': b'copying /home/paolo/NAS/Software/ROS2/Bailey/bailey/build/bailey_drive/build/lib/bailey_drive/debounce.py -> /home/paolo/NAS/Software/ROS2/Bailey/bailey/install/bailey_drive/lib/python3.8/site-packages/bailey_drive\n'}
+[2.880831] (camera_pan_tilt) StdoutLine: {'line': b'writing top-level names to ../../build/camera_pan_tilt/camera_pan_tilt.egg-info/top_level.txt\n'}
+[2.901490] (camera_pan_tilt) StdoutLine: {'line': b"writing manifest file '../../build/camera_pan_tilt/camera_pan_tilt.egg-info/SOURCES.txt'\n"}
+[2.905118] (camera) StdoutLine: {'line': b"reading manifest file '../../build/camera/camera.egg-info/SOURCES.txt'\n"}
+[2.907132] (jetbot_sys_info) StdoutLine: {'line': b'running egg_info\n'}
+[2.908091] (bailey_drive) StdoutLine: {'line': b'copying /home/paolo/NAS/Software/ROS2/Bailey/bailey/build/bailey_drive/build/lib/bailey_drive/__init__.py -> /home/paolo/NAS/Software/ROS2/Bailey/bailey/install/bailey_drive/lib/python3.8/site-packages/bailey_drive\n'}
+[2.911866] (jetbot_sys_info) StdoutLine: {'line': b'creating ../../build/jetbot_sys_info/jetbot_sys_info.egg-info\n'}
+[2.916378] (jetbot_sys_info) StdoutLine: {'line': b'writing ../../build/jetbot_sys_info/jetbot_sys_info.egg-info/PKG-INFO\n'}
+[2.923365] (camera) StdoutLine: {'line': b"writing manifest file '../../build/camera/camera.egg-info/SOURCES.txt'\n"}
+[2.929988] (bailey_drive) StdoutLine: {'line': b'copying /home/paolo/NAS/Software/ROS2/Bailey/bailey/build/bailey_drive/build/lib/bailey_drive/bailey_drive.py -> /home/paolo/NAS/Software/ROS2/Bailey/bailey/install/bailey_drive/lib/python3.8/site-packages/bailey_drive\n'}
+[2.933447] (camera) StdoutLine: {'line': b'running build\n'}
+[2.933890] (camera) StdoutLine: {'line': b'running build_py\n'}
+[2.934631] (-) TimerEvent: {}
+[2.939668] (camera) StdoutLine: {'line': b'creating /home/paolo/NAS/Software/ROS2/Bailey/bailey/build/camera/build\n'}
+[2.941384] (camera) StdoutLine: {'line': b'creating /home/paolo/NAS/Software/ROS2/Bailey/bailey/build/camera/build/lib\n'}
+[2.946290] (camera) StdoutLine: {'line': b'creating /home/paolo/NAS/Software/ROS2/Bailey/bailey/build/camera/build/lib/camera\n'}
+[2.947747] (jetbot_sys_info) StdoutLine: {'line': b'writing dependency_links to ../../build/jetbot_sys_info/jetbot_sys_info.egg-info/dependency_links.txt\n'}
+[2.953670] (camera) StdoutLine: {'line': b'copying camera/overlay_lib.py -> /home/paolo/NAS/Software/ROS2/Bailey/bailey/build/camera/build/lib/camera\n'}
+[2.963068] (jetbot_sys_info) StdoutLine: {'line': b'writing entry points to ../../build/jetbot_sys_info/jetbot_sys_info.egg-info/entry_points.txt\n'}
+[2.964709] (bailey_drive) StdoutLine: {'line': b'byte-compiling /home/paolo/NAS/Software/ROS2/Bailey/bailey/install/bailey_drive/lib/python3.8/site-packages/bailey_drive/debounce.py to debounce.cpython-38.pyc\n'}
+[2.974050] (jetbot_sys_info) StdoutLine: {'line': b'writing requirements to ../../build/jetbot_sys_info/jetbot_sys_info.egg-info/requires.txt\n'}
+[2.979815] (camera) StdoutLine: {'line': b'copying camera/debounce.py -> /home/paolo/NAS/Software/ROS2/Bailey/bailey/build/camera/build/lib/camera\n'}
+[2.985267] (jetbot_sys_info) StdoutLine: {'line': b'writing top-level names to ../../build/jetbot_sys_info/jetbot_sys_info.egg-info/top_level.txt\n'}
+[2.996412] (bailey_drive) StdoutLine: {'line': b'byte-compiling /home/paolo/NAS/Software/ROS2/Bailey/bailey/install/bailey_drive/lib/python3.8/site-packages/bailey_drive/__init__.py to __init__.cpython-38.pyc\n'}
+[3.001683] (jetbot_sys_info) StdoutLine: {'line': b"writing manifest file '../../build/jetbot_sys_info/jetbot_sys_info.egg-info/SOURCES.txt'\n"}
+[3.010725] (camera) StdoutLine: {'line': b'copying camera/log.py -> /home/paolo/NAS/Software/ROS2/Bailey/bailey/build/camera/build/lib/camera\n'}
+[3.021224] (camera_pan_tilt) StdoutLine: {'line': b"reading manifest file '../../build/camera_pan_tilt/camera_pan_tilt.egg-info/SOURCES.txt'\n"}
+[3.027421] (bailey_drive) StdoutLine: {'line': b'byte-compiling /home/paolo/NAS/Software/ROS2/Bailey/bailey/install/bailey_drive/lib/python3.8/site-packages/bailey_drive/bailey_drive.py to bailey_drive.cpython-38.pyc\n'}
+[3.034808] (-) TimerEvent: {}
+[3.038714] (camera_pan_tilt) StdoutLine: {'line': b"writing manifest file '../../build/camera_pan_tilt/camera_pan_tilt.egg-info/SOURCES.txt'\n"}
+[3.040882] (camera) StdoutLine: {'line': b'copying camera/server.py -> /home/paolo/NAS/Software/ROS2/Bailey/bailey/build/camera/build/lib/camera\n'}
+[3.049119] (camera_pan_tilt) StdoutLine: {'line': b'running build\n'}
+[3.049874] (camera_pan_tilt) StdoutLine: {'line': b'running build_py\n'}
+[3.056074] (camera_pan_tilt) StdoutLine: {'line': b'creating /home/paolo/NAS/Software/ROS2/Bailey/bailey/build/camera_pan_tilt/build\n'}
+[3.058076] (camera_pan_tilt) StdoutLine: {'line': b'creating /home/paolo/NAS/Software/ROS2/Bailey/bailey/build/camera_pan_tilt/build/lib\n'}
+[3.063724] (bailey_drive) StdoutLine: {'line': b'running install_data\n'}
+[3.064339] (camera_pan_tilt) StdoutLine: {'line': b'creating /home/paolo/NAS/Software/ROS2/Bailey/bailey/build/camera_pan_tilt/build/lib/camera_pan_tilt\n'}
+[3.067489] (camera) StdoutLine: {'line': b'copying camera/imu_utils.py -> /home/paolo/NAS/Software/ROS2/Bailey/bailey/build/camera/build/lib/camera\n'}
+[3.069588] (bailey_drive) StdoutLine: {'line': b'creating /home/paolo/NAS/Software/ROS2/Bailey/bailey/install/bailey_drive/share/ament_index\n'}
+[3.071418] (bailey_drive) StdoutLine: {'line': b'creating /home/paolo/NAS/Software/ROS2/Bailey/bailey/install/bailey_drive/share/ament_index/resource_index\n'}
+[3.073466] (camera_pan_tilt) StdoutLine: {'line': b'copying camera_pan_tilt/__init__.py -> /home/paolo/NAS/Software/ROS2/Bailey/bailey/build/camera_pan_tilt/build/lib/camera_pan_tilt\n'}
+[3.075931] (bailey_drive) StdoutLine: {'line': b'creating /home/paolo/NAS/Software/ROS2/Bailey/bailey/install/bailey_drive/share/ament_index/resource_index/packages\n'}
+[3.082698] (bailey_drive) StdoutLine: {'line': b'copying resource/bailey_drive -> /home/paolo/NAS/Software/ROS2/Bailey/bailey/install/bailey_drive/share/ament_index/resource_index/packages\n'}
+[3.089028] (camera_pan_tilt) StdoutLine: {'line': b'running install\n'}
+[3.089900] (camera_pan_tilt) StdoutLine: {'line': b'running install_lib\n'}
+[3.092716] (camera) StdoutLine: {'line': b'copying camera/__init__.py -> /home/paolo/NAS/Software/ROS2/Bailey/bailey/build/camera/build/lib/camera\n'}
+[3.104368] (bailey_drive) StdoutLine: {'line': b'copying package.xml -> /home/paolo/NAS/Software/ROS2/Bailey/bailey/install/bailey_drive/share/bailey_drive\n'}
+[3.106554] (camera_pan_tilt) StdoutLine: {'line': b'creating /home/paolo/NAS/Software/ROS2/Bailey/bailey/install/camera_pan_tilt/lib/python3.8/site-packages/camera_pan_tilt\n'}
+[3.112960] (camera_pan_tilt) StdoutLine: {'line': b'copying /home/paolo/NAS/Software/ROS2/Bailey/bailey/build/camera_pan_tilt/build/lib/camera_pan_tilt/__init__.py -> /home/paolo/NAS/Software/ROS2/Bailey/bailey/install/camera_pan_tilt/lib/python3.8/site-packages/camera_pan_tilt\n'}
+[3.113258] (camera) StdoutLine: {'line': b'copying camera/camera.py -> /home/paolo/NAS/Software/ROS2/Bailey/bailey/build/camera/build/lib/camera\n'}
+[3.119884] (jetbot_sys_info) StdoutLine: {'line': b"reading manifest file '../../build/jetbot_sys_info/jetbot_sys_info.egg-info/SOURCES.txt'\n"}
+[3.129849] (bailey_drive) StdoutLine: {'line': b'running install_egg_info\n'}
+[3.134947] (-) TimerEvent: {}
+[3.138910] (jetbot_sys_info) StdoutLine: {'line': b"writing manifest file '../../build/jetbot_sys_info/jetbot_sys_info.egg-info/SOURCES.txt'\n"}
+[3.139426] (bailey_drive) StdoutLine: {'line': b'Copying ../../build/bailey_drive/bailey_drive.egg-info to /home/paolo/NAS/Software/ROS2/Bailey/bailey/install/bailey_drive/lib/python3.8/site-packages/bailey_drive-0.0.0-py3.8.egg-info\n'}
+[3.143242] (camera_pan_tilt) StdoutLine: {'line': b'byte-compiling /home/paolo/NAS/Software/ROS2/Bailey/bailey/install/camera_pan_tilt/lib/python3.8/site-packages/camera_pan_tilt/__init__.py to __init__.cpython-38.pyc\n'}
+[3.143720] (camera) StdoutLine: {'line': b'running install\n'}
+[3.145292] (camera) StdoutLine: {'line': b'running install_lib\n'}
+[3.148569] (jetbot_sys_info) StdoutLine: {'line': b'running build\n'}
+[3.148841] (jetbot_sys_info) StdoutLine: {'line': b'running build_py\n'}
+[3.156624] (jetbot_sys_info) StdoutLine: {'line': b'creating /home/paolo/NAS/Software/ROS2/Bailey/bailey/build/jetbot_sys_info/build\n'}
+[3.160235] (jetbot_sys_info) StdoutLine: {'line': b'creating /home/paolo/NAS/Software/ROS2/Bailey/bailey/build/jetbot_sys_info/build/lib\n'}
+[3.162315] (camera) StdoutLine: {'line': b'creating /home/paolo/NAS/Software/ROS2/Bailey/bailey/install/camera/lib/python3.8/site-packages/camera\n'}
+[3.164360] (jetbot_sys_info) StdoutLine: {'line': b'creating /home/paolo/NAS/Software/ROS2/Bailey/bailey/build/jetbot_sys_info/build/lib/jetbot_sys_info\n'}
+[3.169420] (camera) StdoutLine: {'line': b'copying /home/paolo/NAS/Software/ROS2/Bailey/bailey/build/camera/build/lib/camera/__init__.py -> /home/paolo/NAS/Software/ROS2/Bailey/bailey/install/camera/lib/python3.8/site-packages/camera\n'}
+[3.173848] (jetbot_sys_info) StdoutLine: {'line': b'copying jetbot_sys_info/ads1115.py -> /home/paolo/NAS/Software/ROS2/Bailey/bailey/build/jetbot_sys_info/build/lib/jetbot_sys_info\n'}
+[3.174648] (camera_pan_tilt) StdoutLine: {'line': b'running install_data\n'}
+[3.182407] (camera_pan_tilt) StdoutLine: {'line': b'creating /home/paolo/NAS/Software/ROS2/Bailey/bailey/install/camera_pan_tilt/share/ament_index\n'}
+[3.184350] (camera_pan_tilt) StdoutLine: {'line': b'creating /home/paolo/NAS/Software/ROS2/Bailey/bailey/install/camera_pan_tilt/share/ament_index/resource_index\n'}
+[3.188331] (camera_pan_tilt) StdoutLine: {'line': b'creating /home/paolo/NAS/Software/ROS2/Bailey/bailey/install/camera_pan_tilt/share/ament_index/resource_index/packages\n'}
+[3.188980] (camera) StdoutLine: {'line': b'copying /home/paolo/NAS/Software/ROS2/Bailey/bailey/build/camera/build/lib/camera/imu_utils.py -> /home/paolo/NAS/Software/ROS2/Bailey/bailey/install/camera/lib/python3.8/site-packages/camera\n'}
+[3.200570] (camera_pan_tilt) StdoutLine: {'line': b'copying resource/camera_pan_tilt -> /home/paolo/NAS/Software/ROS2/Bailey/bailey/install/camera_pan_tilt/share/ament_index/resource_index/packages\n'}
+[3.208628] (jetbot_sys_info) StdoutLine: {'line': b'copying jetbot_sys_info/__init__.py -> /home/paolo/NAS/Software/ROS2/Bailey/bailey/build/jetbot_sys_info/build/lib/jetbot_sys_info\n'}
+[3.217976] (camera) StdoutLine: {'line': b'copying /home/paolo/NAS/Software/ROS2/Bailey/bailey/build/camera/build/lib/camera/server.py -> /home/paolo/NAS/Software/ROS2/Bailey/bailey/install/camera/lib/python3.8/site-packages/camera\n'}
+[3.223702] (camera_pan_tilt) StdoutLine: {'line': b'copying package.xml -> /home/paolo/NAS/Software/ROS2/Bailey/bailey/install/camera_pan_tilt/share/camera_pan_tilt\n'}
+[3.228825] (jetbot_sys_info) StdoutLine: {'line': b'copying jetbot_sys_info/jetbot_sys_info.py -> /home/paolo/NAS/Software/ROS2/Bailey/bailey/build/jetbot_sys_info/build/lib/jetbot_sys_info\n'}
+[3.235114] (-) TimerEvent: {}
+[3.244255] (camera_pan_tilt) StdoutLine: {'line': b'running install_egg_info\n'}
+[3.248750] (camera) StdoutLine: {'line': b'copying /home/paolo/NAS/Software/ROS2/Bailey/bailey/build/camera/build/lib/camera/overlay_lib.py -> /home/paolo/NAS/Software/ROS2/Bailey/bailey/install/camera/lib/python3.8/site-packages/camera\n'}
+[3.260887] (camera_pan_tilt) StdoutLine: {'line': b'Copying ../../build/camera_pan_tilt/camera_pan_tilt.egg-info to /home/paolo/NAS/Software/ROS2/Bailey/bailey/install/camera_pan_tilt/lib/python3.8/site-packages/camera_pan_tilt-0.0.0-py3.8.egg-info\n'}
+[3.263038] (jetbot_sys_info) StdoutLine: {'line': b'copying jetbot_sys_info/ina219.py -> /home/paolo/NAS/Software/ROS2/Bailey/bailey/build/jetbot_sys_info/build/lib/jetbot_sys_info\n'}
+[3.281617] (camera) StdoutLine: {'line': b'copying /home/paolo/NAS/Software/ROS2/Bailey/bailey/build/camera/build/lib/camera/debounce.py -> /home/paolo/NAS/Software/ROS2/Bailey/bailey/install/camera/lib/python3.8/site-packages/camera\n'}
+[3.293937] (jetbot_sys_info) StdoutLine: {'line': b'running install\n'}
+[3.297067] (jetbot_sys_info) StdoutLine: {'line': b'running install_lib\n'}
+[3.310678] (camera) StdoutLine: {'line': b'copying /home/paolo/NAS/Software/ROS2/Bailey/bailey/build/camera/build/lib/camera/camera.py -> /home/paolo/NAS/Software/ROS2/Bailey/bailey/install/camera/lib/python3.8/site-packages/camera\n'}
+[3.312847] (jetbot_sys_info) StdoutLine: {'line': b'creating /home/paolo/NAS/Software/ROS2/Bailey/bailey/install/jetbot_sys_info/lib/python3.8/site-packages/jetbot_sys_info\n'}
+[3.320731] (jetbot_sys_info) StdoutLine: {'line': b'copying /home/paolo/NAS/Software/ROS2/Bailey/bailey/build/jetbot_sys_info/build/lib/jetbot_sys_info/jetbot_sys_info.py -> /home/paolo/NAS/Software/ROS2/Bailey/bailey/install/jetbot_sys_info/lib/python3.8/site-packages/jetbot_sys_info\n'}
+[3.335284] (-) TimerEvent: {}
+[3.339940] (camera) StdoutLine: {'line': b'copying /home/paolo/NAS/Software/ROS2/Bailey/bailey/build/camera/build/lib/camera/log.py -> /home/paolo/NAS/Software/ROS2/Bailey/bailey/install/camera/lib/python3.8/site-packages/camera\n'}
+[3.351576] (jetbot_sys_info) StdoutLine: {'line': b'copying /home/paolo/NAS/Software/ROS2/Bailey/bailey/build/jetbot_sys_info/build/lib/jetbot_sys_info/ina219.py -> /home/paolo/NAS/Software/ROS2/Bailey/bailey/install/jetbot_sys_info/lib/python3.8/site-packages/jetbot_sys_info\n'}
+[3.377629] (bailey_drive) StdoutLine: {'line': b'running install_scripts\n'}
+[3.383619] (jetbot_sys_info) StdoutLine: {'line': b'copying /home/paolo/NAS/Software/ROS2/Bailey/bailey/build/jetbot_sys_info/build/lib/jetbot_sys_info/__init__.py -> /home/paolo/NAS/Software/ROS2/Bailey/bailey/install/jetbot_sys_info/lib/python3.8/site-packages/jetbot_sys_info\n'}
+[3.386865] (camera) StdoutLine: {'line': b'byte-compiling /home/paolo/NAS/Software/ROS2/Bailey/bailey/install/camera/lib/python3.8/site-packages/camera/__init__.py to __init__.cpython-38.pyc\n'}
+[3.399914] (jetbot_sys_info) StdoutLine: {'line': b'copying /home/paolo/NAS/Software/ROS2/Bailey/bailey/build/jetbot_sys_info/build/lib/jetbot_sys_info/ads1115.py -> /home/paolo/NAS/Software/ROS2/Bailey/bailey/install/jetbot_sys_info/lib/python3.8/site-packages/jetbot_sys_info\n'}
+[3.426329] (camera) StdoutLine: {'line': b'byte-compiling /home/paolo/NAS/Software/ROS2/Bailey/bailey/install/camera/lib/python3.8/site-packages/camera/imu_utils.py to imu_utils.cpython-38.pyc\n'}
+[3.435426] (-) TimerEvent: {}
+[3.440117] (jetbot_sys_info) StdoutLine: {'line': b'byte-compiling /home/paolo/NAS/Software/ROS2/Bailey/bailey/install/jetbot_sys_info/lib/python3.8/site-packages/jetbot_sys_info/jetbot_sys_info.py to jetbot_sys_info.cpython-38.pyc\n'}
+[3.448717] (bailey_drive) StdoutLine: {'line': b"writing list of installed files to '/home/paolo/NAS/Software/ROS2/Bailey/bailey/build/bailey_drive/install.log'\n"}
+[3.466220] (camera) StdoutLine: {'line': b'byte-compiling /home/paolo/NAS/Software/ROS2/Bailey/bailey/install/camera/lib/python3.8/site-packages/camera/server.py to server.cpython-38.pyc\n'}
+[3.480817] (jetbot_sys_info) StdoutLine: {'line': b'byte-compiling /home/paolo/NAS/Software/ROS2/Bailey/bailey/install/jetbot_sys_info/lib/python3.8/site-packages/jetbot_sys_info/ina219.py to ina219.cpython-38.pyc\n'}
+[3.485706] (bailey_drive) CommandEnded: {'returncode': 0}
+[3.501985] (camera_pan_tilt) StdoutLine: {'line': b'running install_scripts\n'}
+[3.503883] (camera) StdoutLine: {'line': b'byte-compiling /home/paolo/NAS/Software/ROS2/Bailey/bailey/install/camera/lib/python3.8/site-packages/camera/overlay_lib.py to overlay_lib.cpython-38.pyc\n'}
+[3.518843] (jetbot_sys_info) StdoutLine: {'line': b'byte-compiling /home/paolo/NAS/Software/ROS2/Bailey/bailey/install/jetbot_sys_info/lib/python3.8/site-packages/jetbot_sys_info/__init__.py to __init__.cpython-38.pyc\n'}
+[3.535552] (-) TimerEvent: {}
+[3.548864] (jetbot_sys_info) StdoutLine: {'line': b'byte-compiling /home/paolo/NAS/Software/ROS2/Bailey/bailey/install/jetbot_sys_info/lib/python3.8/site-packages/jetbot_sys_info/ads1115.py to ads1115.cpython-38.pyc\n'}
+[3.550617] (camera) StdoutLine: {'line': b'byte-compiling /home/paolo/NAS/Software/ROS2/Bailey/bailey/install/camera/lib/python3.8/site-packages/camera/debounce.py to debounce.cpython-38.pyc\n'}
+[3.556728] (camera_pan_tilt) StdoutLine: {'line': b"writing list of installed files to '/home/paolo/NAS/Software/ROS2/Bailey/bailey/build/camera_pan_tilt/install.log'\n"}
+[3.578468] (jetbot_sys_info) StdoutLine: {'line': b'running install_data\n'}
+[3.584226] (jetbot_sys_info) StdoutLine: {'line': b'creating /home/paolo/NAS/Software/ROS2/Bailey/bailey/install/jetbot_sys_info/share/ament_index\n'}
+[3.585960] (camera) StdoutLine: {'line': b'byte-compiling /home/paolo/NAS/Software/ROS2/Bailey/bailey/install/camera/lib/python3.8/site-packages/camera/camera.py to camera.cpython-38.pyc\n'}
+[3.588360] (jetbot_sys_info) StdoutLine: {'line': b'creating /home/paolo/NAS/Software/ROS2/Bailey/bailey/install/jetbot_sys_info/share/ament_index/resource_index\n'}
+[3.593971] (jetbot_sys_info) StdoutLine: {'line': b'creating /home/paolo/NAS/Software/ROS2/Bailey/bailey/install/jetbot_sys_info/share/ament_index/resource_index/packages\n'}
+[3.603065] (jetbot_sys_info) StdoutLine: {'line': b'copying resource/jetbot_sys_info -> /home/paolo/NAS/Software/ROS2/Bailey/bailey/install/jetbot_sys_info/share/ament_index/resource_index/packages\n'}
+[3.619716] (camera) StdoutLine: {'line': b'byte-compiling /home/paolo/NAS/Software/ROS2/Bailey/bailey/install/camera/lib/python3.8/site-packages/camera/log.py to log.cpython-38.pyc\n'}
+[3.622067] (jetbot_sys_info) StdoutLine: {'line': b'copying package.xml -> /home/paolo/NAS/Software/ROS2/Bailey/bailey/install/jetbot_sys_info/share/jetbot_sys_info\n'}
+[3.635714] (-) TimerEvent: {}
+[3.644993] (jetbot_sys_info) StdoutLine: {'line': b'running install_egg_info\n'}
+[3.651032] (camera) StdoutLine: {'line': b'running install_data\n'}
+[3.657550] (camera) StdoutLine: {'line': b'creating /home/paolo/NAS/Software/ROS2/Bailey/bailey/install/camera/share/ament_index\n'}
+[3.658529] (camera) StdoutLine: {'line': b'creating /home/paolo/NAS/Software/ROS2/Bailey/bailey/install/camera/share/ament_index/resource_index\n'}
+[3.659161] (jetbot_sys_info) StdoutLine: {'line': b'Copying ../../build/jetbot_sys_info/jetbot_sys_info.egg-info to /home/paolo/NAS/Software/ROS2/Bailey/bailey/install/jetbot_sys_info/lib/python3.8/site-packages/jetbot_sys_info-1.0.0-py3.8.egg-info\n'}
+[3.662147] (camera) StdoutLine: {'line': b'creating /home/paolo/NAS/Software/ROS2/Bailey/bailey/install/camera/share/ament_index/resource_index/packages\n'}
+[3.672573] (camera) StdoutLine: {'line': b'copying resource/camera -> /home/paolo/NAS/Software/ROS2/Bailey/bailey/install/camera/share/ament_index/resource_index/packages\n'}
+[3.692324] (camera) StdoutLine: {'line': b'copying package.xml -> /home/paolo/NAS/Software/ROS2/Bailey/bailey/install/camera/share/camera\n'}
+[3.714931] (camera) StdoutLine: {'line': b'running install_egg_info\n'}
+[3.727942] (camera) StdoutLine: {'line': b'Copying ../../build/camera/camera.egg-info to /home/paolo/NAS/Software/ROS2/Bailey/bailey/install/camera/lib/python3.8/site-packages/camera-1.0.0-py3.8.egg-info\n'}
+[3.735849] (-) TimerEvent: {}
+[3.785082] (bailey_drive) JobEnded: {'identifier': 'bailey_drive', 'rc': 0}
+[3.851640] (-) TimerEvent: {}
+[3.852114] (ros2_rtimulib) JobStarted: {'identifier': 'ros2_rtimulib'}
+[3.925072] (jetbot_sys_info) StdoutLine: {'line': b'running install_scripts\n'}
+[3.952420] (-) TimerEvent: {}
+[3.984723] (jetbot_sys_info) StdoutLine: {'line': b'Installing ros2_jetbot_sys_info script to /home/paolo/NAS/Software/ROS2/Bailey/bailey/install/jetbot_sys_info/lib/jetbot_sys_info\n'}
+[4.052373] (-) TimerEvent: {}
+[4.153173] (-) TimerEvent: {}
+[4.253970] (-) TimerEvent: {}
+[4.281686] (jetbot_sys_info) StdoutLine: {'line': b"writing list of installed files to '/home/paolo/NAS/Software/ROS2/Bailey/bailey/build/jetbot_sys_info/install.log'\n"}
+[4.289175] (camera) StdoutLine: {'line': b'running install_scripts\n'}
+[4.354131] (-) TimerEvent: {}
+[4.364246] (camera) StdoutLine: {'line': b'Installing ros2_camera script to /home/paolo/NAS/Software/ROS2/Bailey/bailey/install/camera/lib/camera\n'}
+[4.454343] (-) TimerEvent: {}
+[4.555277] (-) TimerEvent: {}
+[4.656183] (-) TimerEvent: {}
+[4.756953] (-) TimerEvent: {}
+[4.857688] (-) TimerEvent: {}
+[4.885275] (camera_pan_tilt) CommandEnded: {'returncode': 0}
+[4.888559] (camera) StdoutLine: {'line': b"writing list of installed files to '/home/paolo/NAS/Software/ROS2/Bailey/bailey/build/camera/install.log'\n"}
+[4.957943] (-) TimerEvent: {}
+[5.058325] (-) TimerEvent: {}
+[5.127600] (camera_pan_tilt) JobEnded: {'identifier': 'camera_pan_tilt', 'rc': 0}
+[5.162208] (-) TimerEvent: {}
+[5.163040] (jetbot_sys_info) CommandEnded: {'returncode': 0}
+[5.262393] (-) TimerEvent: {}
+[5.363277] (-) TimerEvent: {}
+[5.398959] (jetbot_sys_info) JobEnded: {'identifier': 'jetbot_sys_info', 'rc': 0}
+[5.433819] (camera) CommandEnded: {'returncode': 0}
+[5.463475] (-) TimerEvent: {}
+[5.564297] (-) TimerEvent: {}
+[5.665138] (-) TimerEvent: {}
+[5.669336] (camera) JobEnded: {'identifier': 'camera', 'rc': 0}
+[5.765304] (-) TimerEvent: {}
+[5.865609] (-) TimerEvent: {}
+[5.965880] (-) TimerEvent: {}
+[6.066732] (-) TimerEvent: {}
+[6.089402] (ros2_rtimulib) Command: {'cmd': ['/usr/bin/python3', 'setup.py', 'egg_info', '--egg-base', '../../build/ros2_rtimulib', 'build', '--build-base', '/home/paolo/NAS/Software/ROS2/Bailey/bailey/build/ros2_rtimulib/build', 'install', '--prefix', '/home/paolo/NAS/Software/ROS2/Bailey/bailey/install/ros2_rtimulib', '--record', '/home/paolo/NAS/Software/ROS2/Bailey/bailey/build/ros2_rtimulib/install.log', '--single-version-externally-managed'], 'cwd': '/home/paolo/NAS/Software/ROS2/Bailey/bailey/src/ros2_rtimulib', 'env': {'GJS_DEBUG_TOPICS': 'JS ERROR;JS LOG', 'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'paolo', 'LC_TIME': 'de_CH.UTF-8', 'SSH_AGENT_PID': '2157', 'XDG_SESSION_TYPE': 'x11', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/foxy/opt/yaml_cpp_vendor/lib:/opt/ros/foxy/opt/rviz_ogre_vendor/lib:/opt/ros/foxy/lib/x86_64-linux-gnu:/opt/ros/foxy/lib', 'HOME': '/home/paolo', 'OLDPWD': '/home/paolo', 'DESKTOP_SESSION': 'ubuntu', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'LC_MONETARY': 'de_CH.UTF-8', 'MANAGERPID': '1971', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'MANDATORY_PATH': '/usr/share/gconf/ubuntu.mandatory.path', 'IM_CONFIG_PHASE': '1', 'COLCON_PREFIX_PATH': '/home/paolo/NAS/Software/ROS2/Bailey/bailey/install', 'ROS_DISTRO': 'foxy', 'LOGNAME': 'paolo', 'JOURNAL_STREAM': '8:58001', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'DEFAULTS_PATH': '/usr/share/gconf/ubuntu.default.path', 'USERNAME': 'paolo', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'ROS_LOCALHOST_ONLY': '0', 'WINDOWPATH': '2', 'PATH': '/opt/ros/foxy/bin:/home/paolo/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin', 'SESSION_MANAGER': 'local/kenobi:@/tmp/.ICE-unix/2205,unix/kenobi:/tmp/.ICE-unix/2205', 'INVOCATION_ID': 'd9117a4b51cd4b53b6924325a68dc683', 'XDG_MENU_PREFIX': 'gnome-', 'LC_ADDRESS': 'de_CH.UTF-8', 'GNOME_TERMINAL_SCREEN': '/org/gnome/Terminal/screen/0669a680_31c0_470e_8b69_35d45a1191cb', 'XDG_RUNTIME_DIR': '/run/user/1000', 'DISPLAY': ':0', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'LC_TELEPHONE': 'de_CH.UTF-8', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/gdm/Xauthority', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'GNOME_TERMINAL_SERVICE': ':1.106', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'AMENT_PREFIX_PATH': '/opt/ros/foxy', 'SHELL': '/bin/bash', 'LC_NAME': 'de_CH.UTF-8', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'LC_MEASUREMENT': 'de_CH.UTF-8', 'GPG_AGENT_INFO': '/run/user/1000/gnupg/S.gpg-agent:0:1', 'GJS_DEBUG_OUTPUT': 'stderr', 'LC_IDENTIFICATION': 'de_CH.UTF-8', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/paolo/NAS/Software/ROS2/Bailey/bailey/build/ros2_rtimulib', 'LC_ALL': 'en_US.UTF-8', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/paolo/NAS/Software/ROS2/Bailey/bailey/install/ros2_rtimulib/lib/python3.8/site-packages:/opt/ros/foxy/lib/python3.8/site-packages', 'LC_NUMERIC': 'de_CH.UTF-8', 'LC_PAPER': 'de_CH.UTF-8', 'COLCON': '1', 'VTE_VERSION': '6003'}, 'shell': False}
+[6.166770] (-) TimerEvent: {}
+[6.267084] (-) TimerEvent: {}
+[6.367329] (-) TimerEvent: {}
+[6.374620] (ros2_rtimulib) StdoutLine: {'line': b'running egg_info\n'}
+[6.377130] (ros2_rtimulib) StdoutLine: {'line': b'creating ../../build/ros2_rtimulib/ros2_rtimulib.egg-info\n'}
+[6.382389] (ros2_rtimulib) StdoutLine: {'line': b'writing ../../build/ros2_rtimulib/ros2_rtimulib.egg-info/PKG-INFO\n'}
+[6.408052] (ros2_rtimulib) StdoutLine: {'line': b'writing dependency_links to ../../build/ros2_rtimulib/ros2_rtimulib.egg-info/dependency_links.txt\n'}
+[6.422821] (ros2_rtimulib) StdoutLine: {'line': b'writing entry points to ../../build/ros2_rtimulib/ros2_rtimulib.egg-info/entry_points.txt\n'}
+[6.435107] (ros2_rtimulib) StdoutLine: {'line': b'writing requirements to ../../build/ros2_rtimulib/ros2_rtimulib.egg-info/requires.txt\n'}
+[6.445703] (ros2_rtimulib) StdoutLine: {'line': b'writing top-level names to ../../build/ros2_rtimulib/ros2_rtimulib.egg-info/top_level.txt\n'}
+[6.464827] (ros2_rtimulib) StdoutLine: {'line': b"writing manifest file '../../build/ros2_rtimulib/ros2_rtimulib.egg-info/SOURCES.txt'\n"}
+[6.467532] (-) TimerEvent: {}
+[6.568343] (-) TimerEvent: {}
+[6.584659] (ros2_rtimulib) StdoutLine: {'line': b"reading manifest file '../../build/ros2_rtimulib/ros2_rtimulib.egg-info/SOURCES.txt'\n"}
+[6.599032] (ros2_rtimulib) StdoutLine: {'line': b"writing manifest file '../../build/ros2_rtimulib/ros2_rtimulib.egg-info/SOURCES.txt'\n"}
+[6.608248] (ros2_rtimulib) StdoutLine: {'line': b'running build\n'}
+[6.608491] (ros2_rtimulib) StdoutLine: {'line': b'running build_py\n'}
+[6.616391] (ros2_rtimulib) StdoutLine: {'line': b'creating /home/paolo/NAS/Software/ROS2/Bailey/bailey/build/ros2_rtimulib/build\n'}
+[6.618634] (ros2_rtimulib) StdoutLine: {'line': b'creating /home/paolo/NAS/Software/ROS2/Bailey/bailey/build/ros2_rtimulib/build/lib\n'}
+[6.630028] (ros2_rtimulib) StdoutLine: {'line': b'creating /home/paolo/NAS/Software/ROS2/Bailey/bailey/build/ros2_rtimulib/build/lib/ros2_rtimulib\n'}
+[6.640862] (ros2_rtimulib) StdoutLine: {'line': b'copying ros2_rtimulib/imu_Lib.py -> /home/paolo/NAS/Software/ROS2/Bailey/bailey/build/ros2_rtimulib/build/lib/ros2_rtimulib\n'}
+[6.668684] (-) TimerEvent: {}
+[6.671797] (ros2_rtimulib) StdoutLine: {'line': b'copying ros2_rtimulib/imu_utils.py -> /home/paolo/NAS/Software/ROS2/Bailey/bailey/build/ros2_rtimulib/build/lib/ros2_rtimulib\n'}
+[6.699494] (ros2_rtimulib) StdoutLine: {'line': b'copying ros2_rtimulib/__init__.py -> /home/paolo/NAS/Software/ROS2/Bailey/bailey/build/ros2_rtimulib/build/lib/ros2_rtimulib\n'}
+[6.727428] (ros2_rtimulib) StdoutLine: {'line': b'copying ros2_rtimulib/imu_node.py -> /home/paolo/NAS/Software/ROS2/Bailey/bailey/build/ros2_rtimulib/build/lib/ros2_rtimulib\n'}
+[6.755104] (ros2_rtimulib) StdoutLine: {'line': b'running install\n'}
+[6.758016] (ros2_rtimulib) StdoutLine: {'line': b'running install_lib\n'}
+[6.768820] (-) TimerEvent: {}
+[6.775593] (ros2_rtimulib) StdoutLine: {'line': b'creating /home/paolo/NAS/Software/ROS2/Bailey/bailey/install/ros2_rtimulib/lib/python3.8/site-packages/ros2_rtimulib\n'}
+[6.783056] (ros2_rtimulib) StdoutLine: {'line': b'copying /home/paolo/NAS/Software/ROS2/Bailey/bailey/build/ros2_rtimulib/build/lib/ros2_rtimulib/imu_utils.py -> /home/paolo/NAS/Software/ROS2/Bailey/bailey/install/ros2_rtimulib/lib/python3.8/site-packages/ros2_rtimulib\n'}
+[6.811730] (ros2_rtimulib) StdoutLine: {'line': b'copying /home/paolo/NAS/Software/ROS2/Bailey/bailey/build/ros2_rtimulib/build/lib/ros2_rtimulib/imu_Lib.py -> /home/paolo/NAS/Software/ROS2/Bailey/bailey/install/ros2_rtimulib/lib/python3.8/site-packages/ros2_rtimulib\n'}
+[6.843586] (ros2_rtimulib) StdoutLine: {'line': b'copying /home/paolo/NAS/Software/ROS2/Bailey/bailey/build/ros2_rtimulib/build/lib/ros2_rtimulib/__init__.py -> /home/paolo/NAS/Software/ROS2/Bailey/bailey/install/ros2_rtimulib/lib/python3.8/site-packages/ros2_rtimulib\n'}
+[6.869043] (-) TimerEvent: {}
+[6.872352] (ros2_rtimulib) StdoutLine: {'line': b'copying /home/paolo/NAS/Software/ROS2/Bailey/bailey/build/ros2_rtimulib/build/lib/ros2_rtimulib/imu_node.py -> /home/paolo/NAS/Software/ROS2/Bailey/bailey/install/ros2_rtimulib/lib/python3.8/site-packages/ros2_rtimulib\n'}
+[6.914049] (ros2_rtimulib) StdoutLine: {'line': b'byte-compiling /home/paolo/NAS/Software/ROS2/Bailey/bailey/install/ros2_rtimulib/lib/python3.8/site-packages/ros2_rtimulib/imu_utils.py to imu_utils.cpython-38.pyc\n'}
+[6.951405] (ros2_rtimulib) StdoutLine: {'line': b'byte-compiling /home/paolo/NAS/Software/ROS2/Bailey/bailey/install/ros2_rtimulib/lib/python3.8/site-packages/ros2_rtimulib/imu_Lib.py to imu_Lib.cpython-38.pyc\n'}
+[6.969228] (-) TimerEvent: {}
+[6.988035] (ros2_rtimulib) StdoutLine: {'line': b'byte-compiling /home/paolo/NAS/Software/ROS2/Bailey/bailey/install/ros2_rtimulib/lib/python3.8/site-packages/ros2_rtimulib/__init__.py to __init__.cpython-38.pyc\n'}
+[7.023810] (ros2_rtimulib) StdoutLine: {'line': b'byte-compiling /home/paolo/NAS/Software/ROS2/Bailey/bailey/install/ros2_rtimulib/lib/python3.8/site-packages/ros2_rtimulib/imu_node.py to imu_node.cpython-38.pyc\n'}
+[7.057283] (ros2_rtimulib) StdoutLine: {'line': b'running install_data\n'}
+[7.063638] (ros2_rtimulib) StdoutLine: {'line': b'creating /home/paolo/NAS/Software/ROS2/Bailey/bailey/install/ros2_rtimulib/share/ament_index\n'}
+[7.065907] (ros2_rtimulib) StdoutLine: {'line': b'creating /home/paolo/NAS/Software/ROS2/Bailey/bailey/install/ros2_rtimulib/share/ament_index/resource_index\n'}
+[7.069452] (-) TimerEvent: {}
+[7.070552] (ros2_rtimulib) StdoutLine: {'line': b'creating /home/paolo/NAS/Software/ROS2/Bailey/bailey/install/ros2_rtimulib/share/ament_index/resource_index/packages\n'}
+[7.082841] (ros2_rtimulib) StdoutLine: {'line': b'copying resource/ros2_rtimulib -> /home/paolo/NAS/Software/ROS2/Bailey/bailey/install/ros2_rtimulib/share/ament_index/resource_index/packages\n'}
+[7.102143] (ros2_rtimulib) StdoutLine: {'line': b'copying package.xml -> /home/paolo/NAS/Software/ROS2/Bailey/bailey/install/ros2_rtimulib/share/ros2_rtimulib\n'}
+[7.126943] (ros2_rtimulib) StdoutLine: {'line': b'creating /home/paolo/NAS/Software/ROS2/Bailey/bailey/install/ros2_rtimulib/share/ros2_rtimulib/launch\n'}
+[7.133559] (ros2_rtimulib) StdoutLine: {'line': b'copying launch/rtimulib.launch.py -> /home/paolo/NAS/Software/ROS2/Bailey/bailey/install/ros2_rtimulib/share/ros2_rtimulib/launch\n'}
+[7.165015] (ros2_rtimulib) StdoutLine: {'line': b'creating /home/paolo/NAS/Software/ROS2/Bailey/bailey/install/ros2_rtimulib/share/ros2_rtimulib/config\n'}
+[7.169671] (-) TimerEvent: {}
+[7.171932] (ros2_rtimulib) StdoutLine: {'line': b'copying config/imu.yaml -> /home/paolo/NAS/Software/ROS2/Bailey/bailey/install/ros2_rtimulib/share/ros2_rtimulib/config\n'}
+[7.203450] (ros2_rtimulib) StdoutLine: {'line': b'copying config/RTIMULib.ini -> /home/paolo/NAS/Software/ROS2/Bailey/bailey/install/ros2_rtimulib/share/ros2_rtimulib\n'}
+[7.232526] (ros2_rtimulib) StdoutLine: {'line': b'running install_egg_info\n'}
+[7.245432] (ros2_rtimulib) StdoutLine: {'line': b'Copying ../../build/ros2_rtimulib/ros2_rtimulib.egg-info to /home/paolo/NAS/Software/ROS2/Bailey/bailey/install/ros2_rtimulib/lib/python3.8/site-packages/ros2_rtimulib-1.1.3-py3.8.egg-info\n'}
+[7.269996] (-) TimerEvent: {}
+[7.370816] (-) TimerEvent: {}
+[7.471734] (-) TimerEvent: {}
+[7.483050] (ros2_rtimulib) StdoutLine: {'line': b'running install_scripts\n'}
+[7.547692] (ros2_rtimulib) StdoutLine: {'line': b'Installing imu_node script to /home/paolo/NAS/Software/ROS2/Bailey/bailey/install/ros2_rtimulib/lib/ros2_rtimulib\n'}
+[7.567996] (ros2_rtimulib) StdoutLine: {'line': b"writing list of installed files to '/home/paolo/NAS/Software/ROS2/Bailey/bailey/build/ros2_rtimulib/install.log'\n"}
+[7.571970] (-) TimerEvent: {}
+[7.627491] (ros2_rtimulib) CommandEnded: {'returncode': 0}
+[7.672023] (-) TimerEvent: {}
+[7.772793] (-) TimerEvent: {}
+[7.873452] (-) TimerEvent: {}
+[7.929097] (ros2_rtimulib) JobEnded: {'identifier': 'ros2_rtimulib', 'rc': 0}
+[7.977282] (-) TimerEvent: {}
+[7.977879] (-) EventReactorShutdown: {}

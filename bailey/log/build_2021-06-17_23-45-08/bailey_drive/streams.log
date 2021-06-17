@@ -1,0 +1,18 @@
+[0.722s] Invoking command in '/home/paolo/NAS/Software/ROS2/Bailey/bailey/build/bailey_drive': PYTHONPATH=/home/paolo/NAS/Software/ROS2/Bailey/bailey/install/bailey_drive/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py develop --prefix /home/paolo/NAS/Software/ROS2/Bailey/bailey/install/bailey_drive --editable --build-directory /home/paolo/NAS/Software/ROS2/Bailey/bailey/build/bailey_drive/build --no-deps install_data --install-dir /home/paolo/NAS/Software/ROS2/Bailey/bailey/install/bailey_drive
+[1.010s] running develop
+[1.154s] running egg_info
+[1.156s] writing bailey_drive.egg-info/PKG-INFO
+[1.178s] writing dependency_links to bailey_drive.egg-info/dependency_links.txt
+[1.198s] writing entry points to bailey_drive.egg-info/entry_points.txt
+[1.216s] writing requirements to bailey_drive.egg-info/requires.txt
+[1.229s] writing top-level names to bailey_drive.egg-info/top_level.txt
+[1.343s] reading manifest file 'bailey_drive.egg-info/SOURCES.txt'
+[1.363s] writing manifest file 'bailey_drive.egg-info/SOURCES.txt'
+[1.436s] running build_ext
+[1.438s] Creating /home/paolo/NAS/Software/ROS2/Bailey/bailey/install/bailey_drive/lib/python3.8/site-packages/site.py
+[1.491s] Creating /home/paolo/NAS/Software/ROS2/Bailey/bailey/install/bailey_drive/lib/python3.8/site-packages/bailey-drive.egg-link (link to .)
+[1.532s] Installing ros2_jetbot_drive script to /home/paolo/NAS/Software/ROS2/Bailey/bailey/install/bailey_drive/lib/bailey_drive
+[1.558s] 
+[1.559s] Installed /home/paolo/NAS/Software/ROS2/Bailey/bailey/build/bailey_drive
+[1.565s] running install_data
+[1.614s] Invoked command in '/home/paolo/NAS/Software/ROS2/Bailey/bailey/build/bailey_drive' returned '0': PYTHONPATH=/home/paolo/NAS/Software/ROS2/Bailey/bailey/install/bailey_drive/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py develop --prefix /home/paolo/NAS/Software/ROS2/Bailey/bailey/install/bailey_drive --editable --build-directory /home/paolo/NAS/Software/ROS2/Bailey/bailey/build/bailey_drive/build --no-deps install_data --install-dir /home/paolo/NAS/Software/ROS2/Bailey/bailey/install/bailey_drive
