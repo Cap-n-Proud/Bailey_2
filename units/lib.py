@@ -14,6 +14,8 @@ import RPi.GPIO as GPIO
 # from RpiMotorLib import RpiMotorLib
 import stepper_lib as RpiMotorLib
 
+import threading
+
 # from stepper_lib import RpiMotorLib
 
 # Declare an named instance of class pass a name and type of motor
@@ -38,7 +40,7 @@ def main():
     # GPIO.add_event_detect(17, GPIO.RISING, callback=button_callback)
 
     GpioPins_MA = [13, 11, 15, 12]
-    GpioPins_MB = [37, 33, 35, 31]
+    GpioPins_MB = [37, 33, 35, 16]
 
     speed = [0.002, 0.003, 0.005]
     speed_h = [0.05, 0.001, 0.0008, 0.0006]
@@ -50,8 +52,18 @@ def main():
 
     for s in speed:
         input("Press <Enter> to continue Test. Speed: " + str(s))
-        motor_A.motor_run(GpioPins_MA, s, 200, True, True, "full", 1)
-        motor_B.motor_run(GpioPins_MB, s, 200, True, True, "full", 1)
+        t1 = threading.Thread(
+            target=motor_A.motor_run, args=(GpioPins_MA, s, 200, True, False, "full", 1)
+        )
+        # motor_A.motor_run(GpioPins_MA, s, 200, True, True, "full", 1)
+        t1.start()
+        t2 = threading.Thread(
+            target=motor_B.motor_run,
+            args=(GpioPins_MB, -s, 200, True, False, "full", 1),
+        )
+        t2.start()
+
+        # motor_B.motor_run(GpioPins_MB, s, 200, True, True, "full", 1)
         time.sleep(1)
     for s in speed:
         input("Press <Enter> to continue Test. Speed: " + str(s))

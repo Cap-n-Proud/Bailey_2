@@ -1,0 +1,97 @@
+[0.000000] (-) TimerEvent: {}
+[0.001856] (-) JobUnselected: {'identifier': 'camera'}
+[0.002081] (-) JobUnselected: {'identifier': 'camera_pan_tilt'}
+[0.002356] (-) JobUnselected: {'identifier': 'jetbot_sys_info'}
+[0.002507] (-) JobUnselected: {'identifier': 'ros2_rtimulib'}
+[0.002607] (bailey_drive) JobQueued: {'identifier': 'bailey_drive', 'dependencies': OrderedDict()}
+[0.002718] (bailey_drive) JobStarted: {'identifier': 'bailey_drive'}
+[0.099146] (-) TimerEvent: {}
+[0.200062] (-) TimerEvent: {}
+[0.300958] (-) TimerEvent: {}
+[0.401754] (-) TimerEvent: {}
+[0.502393] (-) TimerEvent: {}
+[0.603332] (-) TimerEvent: {}
+[0.703919] (-) TimerEvent: {}
+[0.804509] (-) TimerEvent: {}
+[0.905179] (-) TimerEvent: {}
+[1.005819] (-) TimerEvent: {}
+[1.106564] (-) TimerEvent: {}
+[1.207319] (-) TimerEvent: {}
+[1.308077] (-) TimerEvent: {}
+[1.409269] (-) TimerEvent: {}
+[1.498215] (bailey_drive) Command: {'cmd': ['/usr/bin/python3', 'setup.py', 'develop', '--prefix', '/home/ubuntu/Software/ROS2/Bailey_2/bailey/install/bailey_drive', '--uninstall', '--editable', '--build-directory', '/home/ubuntu/Software/ROS2/Bailey_2/bailey/build/bailey_drive/build'], 'cwd': '/home/ubuntu/Software/ROS2/Bailey_2/bailey/build/bailey_drive', 'env': {'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'ubuntu', 'SSH_CLIENT': '192.168.1.140 52716 22', 'LC_TIME': 'de_CH.UTF-8', 'XDG_SESSION_TYPE': 'tty', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/foxy/opt/yaml_cpp_vendor/lib:/opt/ros/foxy/lib/aarch64-linux-gnu:/opt/ros/foxy/lib', 'MOTD_SHOWN': 'pam', 'HOME': '/home/ubuntu', 'OLDPWD': '/home/ubuntu', 'SSH_TTY': '/dev/pts/1', 'ROS_PYTHON_VERSION': '3', 'LC_MONETARY': 'de_CH.UTF-8', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLCON_PREFIX_PATH': '/home/ubuntu/Software/ROS2/Bailey_2/bailey/install', 'ROS_DISTRO': 'foxy', 'LOGNAME': 'ubuntu', '_': '/home/ubuntu/.local/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'TERM': 'xterm-256color', 'XDG_SESSION_ID': '3', 'ROS_LOCALHOST_ONLY': '0', 'PATH': '/home/ubuntu/.local/bin:/opt/ros/foxy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin', 'LC_ADDRESS': 'de_CH.UTF-8', 'XDG_RUNTIME_DIR': '/run/user/1000', 'LANG': 'en_US.UTF-8', 'LC_TELEPHONE': 'de_CH.UTF-8', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'AMENT_PREFIX_PATH': '/home/ubuntu/Software/ROS2/Bailey_2/bailey/install/ros2_rtimulib:/home/ubuntu/Software/ROS2/Bailey_2/bailey/install/jetbot_sys_info:/home/ubuntu/Software/ROS2/Bailey_2/bailey/install/camera_pan_tilt:/home/ubuntu/Software/ROS2/Bailey_2/bailey/install/camera:/home/ubuntu/Software/ROS2/Bailey_2/bailey/install/bailey_drive:/opt/ros/foxy', 'SHELL': '/bin/bash', 'LC_NAME': 'de_CH.UTF-8', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'LC_MEASUREMENT': 'de_CH.UTF-8', 'LC_IDENTIFICATION': 'de_CH.UTF-8', 'PWD': '/home/ubuntu/Software/ROS2/Bailey_2/bailey/build/bailey_drive', 'LC_ALL': 'en_US.UTF-8', 'SSH_CONNECTION': '192.168.1.140 52716 192.168.1.110 22', 'XDG_DATA_DIRS': '/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/ubuntu/Software/ROS2/Bailey_2/bailey/install/bailey_drive/lib/python3.8/site-packages:/home/ubuntu/Software/ROS2/Bailey_2/bailey/install/ros2_rtimulib/lib/python3.8/site-packages:/home/ubuntu/Software/ROS2/Bailey_2/bailey/install/jetbot_sys_info/lib/python3.8/site-packages:/home/ubuntu/Software/ROS2/Bailey_2/bailey/install/camera_pan_tilt/lib/python3.8/site-packages:/home/ubuntu/Software/ROS2/Bailey_2/bailey/install/camera/lib/python3.8/site-packages:/home/ubuntu/Software/ROS2/Bailey/bailey/build/bailey_drive:/home/ubuntu/Software/ROS2/Bailey_2/bailey/install/bailey_drive/lib/python3.8/site-packages:/opt/ros/foxy/lib/python3.8/site-packages', 'LC_NUMERIC': 'de_CH.UTF-8', 'LC_PAPER': 'de_CH.UTF-8', 'COLCON': '1'}, 'shell': False}
+[1.529961] (-) TimerEvent: {}
+[1.631614] (-) TimerEvent: {}
+[1.732258] (-) TimerEvent: {}
+[1.832858] (-) TimerEvent: {}
+[1.933466] (-) TimerEvent: {}
+[2.034110] (-) TimerEvent: {}
+[2.134757] (-) TimerEvent: {}
+[2.235464] (-) TimerEvent: {}
+[2.336211] (-) TimerEvent: {}
+[2.436932] (-) TimerEvent: {}
+[2.537654] (-) TimerEvent: {}
+[2.638362] (-) TimerEvent: {}
+[2.647477] (bailey_drive) StdoutLine: {'line': b'running develop\n'}
+[2.738498] (-) TimerEvent: {}
+[2.839129] (-) TimerEvent: {}
+[2.939816] (-) TimerEvent: {}
+[3.040647] (-) TimerEvent: {}
+[3.141338] (-) TimerEvent: {}
+[3.242116] (-) TimerEvent: {}
+[3.342747] (-) TimerEvent: {}
+[3.440504] (bailey_drive) CommandEnded: {'returncode': 0}
+[3.452969] (-) TimerEvent: {}
+[3.458534] (bailey_drive) Command: {'cmd': ['/usr/bin/python3', 'setup.py', 'egg_info', '--egg-base', '../../build/bailey_drive', 'build', '--build-base', '/home/ubuntu/Software/ROS2/Bailey_2/bailey/build/bailey_drive/build', 'install', '--prefix', '/home/ubuntu/Software/ROS2/Bailey_2/bailey/install/bailey_drive', '--record', '/home/ubuntu/Software/ROS2/Bailey_2/bailey/build/bailey_drive/install.log', '--single-version-externally-managed'], 'cwd': '/home/ubuntu/Software/ROS2/Bailey_2/bailey/src/bailey_drive', 'env': {'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'ubuntu', 'SSH_CLIENT': '192.168.1.140 52716 22', 'LC_TIME': 'de_CH.UTF-8', 'XDG_SESSION_TYPE': 'tty', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/foxy/opt/yaml_cpp_vendor/lib:/opt/ros/foxy/lib/aarch64-linux-gnu:/opt/ros/foxy/lib', 'MOTD_SHOWN': 'pam', 'HOME': '/home/ubuntu', 'OLDPWD': '/home/ubuntu', 'SSH_TTY': '/dev/pts/1', 'ROS_PYTHON_VERSION': '3', 'LC_MONETARY': 'de_CH.UTF-8', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLCON_PREFIX_PATH': '/home/ubuntu/Software/ROS2/Bailey_2/bailey/install', 'ROS_DISTRO': 'foxy', 'LOGNAME': 'ubuntu', '_': '/home/ubuntu/.local/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'TERM': 'xterm-256color', 'XDG_SESSION_ID': '3', 'ROS_LOCALHOST_ONLY': '0', 'PATH': '/home/ubuntu/.local/bin:/opt/ros/foxy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin', 'LC_ADDRESS': 'de_CH.UTF-8', 'XDG_RUNTIME_DIR': '/run/user/1000', 'LANG': 'en_US.UTF-8', 'LC_TELEPHONE': 'de_CH.UTF-8', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'AMENT_PREFIX_PATH': '/home/ubuntu/Software/ROS2/Bailey_2/bailey/install/ros2_rtimulib:/home/ubuntu/Software/ROS2/Bailey_2/bailey/install/jetbot_sys_info:/home/ubuntu/Software/ROS2/Bailey_2/bailey/install/camera_pan_tilt:/home/ubuntu/Software/ROS2/Bailey_2/bailey/install/camera:/home/ubuntu/Software/ROS2/Bailey_2/bailey/install/bailey_drive:/opt/ros/foxy', 'SHELL': '/bin/bash', 'LC_NAME': 'de_CH.UTF-8', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'LC_MEASUREMENT': 'de_CH.UTF-8', 'LC_IDENTIFICATION': 'de_CH.UTF-8', 'PWD': '/home/ubuntu/Software/ROS2/Bailey_2/bailey/build/bailey_drive', 'LC_ALL': 'en_US.UTF-8', 'SSH_CONNECTION': '192.168.1.140 52716 192.168.1.110 22', 'XDG_DATA_DIRS': '/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/ubuntu/Software/ROS2/Bailey_2/bailey/install/bailey_drive/lib/python3.8/site-packages:/home/ubuntu/Software/ROS2/Bailey_2/bailey/install/ros2_rtimulib/lib/python3.8/site-packages:/home/ubuntu/Software/ROS2/Bailey_2/bailey/install/jetbot_sys_info/lib/python3.8/site-packages:/home/ubuntu/Software/ROS2/Bailey_2/bailey/install/camera_pan_tilt/lib/python3.8/site-packages:/home/ubuntu/Software/ROS2/Bailey_2/bailey/install/camera/lib/python3.8/site-packages:/home/ubuntu/Software/ROS2/Bailey/bailey/build/bailey_drive:/home/ubuntu/Software/ROS2/Bailey_2/bailey/install/bailey_drive/lib/python3.8/site-packages:/opt/ros/foxy/lib/python3.8/site-packages', 'LC_NUMERIC': 'de_CH.UTF-8', 'LC_PAPER': 'de_CH.UTF-8', 'COLCON': '1'}, 'shell': False}
+[3.553088] (-) TimerEvent: {}
+[3.653844] (-) TimerEvent: {}
+[3.754500] (-) TimerEvent: {}
+[3.855118] (-) TimerEvent: {}
+[3.955834] (-) TimerEvent: {}
+[4.056724] (-) TimerEvent: {}
+[4.157562] (-) TimerEvent: {}
+[4.258227] (-) TimerEvent: {}
+[4.358811] (-) TimerEvent: {}
+[4.459493] (-) TimerEvent: {}
+[4.559527] (bailey_drive) StdoutLine: {'line': b'running egg_info\n'}
+[4.560176] (-) TimerEvent: {}
+[4.563770] (bailey_drive) StdoutLine: {'line': b'writing ../../build/bailey_drive/bailey_drive.egg-info/PKG-INFO\n'}
+[4.580879] (bailey_drive) StdoutLine: {'line': b'writing dependency_links to ../../build/bailey_drive/bailey_drive.egg-info/dependency_links.txt\n'}
+[4.594903] (bailey_drive) StdoutLine: {'line': b'writing entry points to ../../build/bailey_drive/bailey_drive.egg-info/entry_points.txt\n'}
+[4.606182] (bailey_drive) StdoutLine: {'line': b'writing requirements to ../../build/bailey_drive/bailey_drive.egg-info/requires.txt\n'}
+[4.619363] (bailey_drive) StdoutLine: {'line': b'writing top-level names to ../../build/bailey_drive/bailey_drive.egg-info/top_level.txt\n'}
+[4.660367] (-) TimerEvent: {}
+[4.761103] (-) TimerEvent: {}
+[4.805369] (bailey_drive) StdoutLine: {'line': b"reading manifest file '../../build/bailey_drive/bailey_drive.egg-info/SOURCES.txt'\n"}
+[4.825961] (bailey_drive) StdoutLine: {'line': b"writing manifest file '../../build/bailey_drive/bailey_drive.egg-info/SOURCES.txt'\n"}
+[4.834801] (bailey_drive) StdoutLine: {'line': b'running build\n'}
+[4.835525] (bailey_drive) StdoutLine: {'line': b'running build_py\n'}
+[4.859935] (bailey_drive) StdoutLine: {'line': b'copying bailey_drive/bailey_drive.py -> /home/ubuntu/Software/ROS2/Bailey_2/bailey/build/bailey_drive/build/lib/bailey_drive\n'}
+[4.861231] (-) TimerEvent: {}
+[4.886861] (bailey_drive) StdoutLine: {'line': b'running install\n'}
+[4.892092] (bailey_drive) StdoutLine: {'line': b'running install_lib\n'}
+[4.909122] (bailey_drive) StdoutLine: {'line': b'copying /home/ubuntu/Software/ROS2/Bailey_2/bailey/build/bailey_drive/build/lib/bailey_drive/bailey_drive.py -> /home/ubuntu/Software/ROS2/Bailey_2/bailey/install/bailey_drive/lib/python3.8/site-packages/bailey_drive\n'}
+[4.945797] (bailey_drive) StdoutLine: {'line': b'byte-compiling /home/ubuntu/Software/ROS2/Bailey_2/bailey/install/bailey_drive/lib/python3.8/site-packages/bailey_drive/bailey_drive.py to bailey_drive.cpython-38.pyc\n'}
+[4.961525] (-) TimerEvent: {}
+[4.963362] (bailey_drive) StderrLine: {'line': b'  File "/home/ubuntu/Software/ROS2/Bailey_2/bailey/install/bailey_drive/lib/python3.8/site-packages/bailey_drive/bailey_drive.py", line 70\n'}
+[4.964030] (bailey_drive) StderrLine: {'line': b'    import .stepper_lib  as RpiMotorLib\n'}
+[4.964407] (bailey_drive) StderrLine: {'line': b'           ^\n'}
+[4.964766] (bailey_drive) StderrLine: {'line': b'SyntaxError: invalid syntax\n'}
+[4.965152] (bailey_drive) StderrLine: {'line': b'\n'}
+[4.965697] (bailey_drive) StdoutLine: {'line': b'running install_data\n'}
+[4.976353] (bailey_drive) StdoutLine: {'line': b'running install_egg_info\n'}
+[4.984924] (bailey_drive) StdoutLine: {'line': b"removing '/home/ubuntu/Software/ROS2/Bailey_2/bailey/install/bailey_drive/lib/python3.8/site-packages/bailey_drive-0.0.0-py3.8.egg-info' (and everything under it)\n"}
+[5.014640] (bailey_drive) StdoutLine: {'line': b'Copying ../../build/bailey_drive/bailey_drive.egg-info to /home/ubuntu/Software/ROS2/Bailey_2/bailey/install/bailey_drive/lib/python3.8/site-packages/bailey_drive-0.0.0-py3.8.egg-info\n'}
+[5.061704] (-) TimerEvent: {}
+[5.162506] (-) TimerEvent: {}
+[5.247902] (bailey_drive) StdoutLine: {'line': b'running install_scripts\n'}
+[5.262661] (-) TimerEvent: {}
+[5.339738] (bailey_drive) StdoutLine: {'line': b'Installing ros2_bailey_drive script to /home/ubuntu/Software/ROS2/Bailey_2/bailey/install/bailey_drive/lib/bailey_drive\n'}
+[5.354266] (bailey_drive) StdoutLine: {'line': b"writing list of installed files to '/home/ubuntu/Software/ROS2/Bailey_2/bailey/build/bailey_drive/install.log'\n"}
+[5.362838] (-) TimerEvent: {}
+[5.463714] (-) TimerEvent: {}
+[5.467467] (bailey_drive) CommandEnded: {'returncode': 0}
+[5.563891] (-) TimerEvent: {}
+[5.664704] (-) TimerEvent: {}
+[5.666645] (bailey_drive) JobEnded: {'identifier': 'bailey_drive', 'rc': 0}
+[5.727951] (-) EventReactorShutdown: {}

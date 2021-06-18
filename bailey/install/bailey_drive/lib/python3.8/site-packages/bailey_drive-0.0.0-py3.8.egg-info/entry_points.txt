@@ -1,0 +1,3 @@
+[console_scripts]
+ros2_bailey_drive = bailey_drive.bailey_drive:main
+

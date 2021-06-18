@@ -1,0 +1,173 @@
+[1.843s] DEBUG:colcon:Command line arguments: ['/home/ubuntu/.local/bin/colcon', 'build', '--symlink-install', '--packages-select', 'bailey_drive']
+[1.844s] DEBUG:colcon:Parsed command line arguments: Namespace(ament_cmake_args=None, base_paths=['.'], build_base='build', catkin_cmake_args=None, catkin_skip_building_tests=False, cmake_args=None, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, cmake_target=None, cmake_target_skip_unavailable=False, continue_on_error=False, event_handlers=None, executor='parallel', ignore_user_meta=False, install_base='install', log_base=None, log_level=None, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0xffffb1495940>>, merge_install=False, metas=['./colcon.meta'], packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_end=None, packages_ignore=None, packages_ignore_regex=None, packages_select=['bailey_drive'], packages_select_build_failed=False, packages_select_by_dep=None, packages_select_regex=None, packages_select_test_failures=False, packages_skip=None, packages_skip_build_finished=False, packages_skip_by_dep=None, packages_skip_regex=None, packages_skip_test_passed=False, packages_skip_up_to=None, packages_start=None, packages_up_to=None, packages_up_to_regex=None, parallel_workers=4, paths=None, symlink_install=True, test_result_base=None, verb_extension=<colcon_core.verb.build.BuildVerb object at 0xffffb1495940>, verb_name='build', verb_parser=<colcon_defaults.argument_parser.defaults.DefaultArgumentsDecorator object at 0xffffb13ecc70>)
+[1.888s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[1.889s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[1.889s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[1.889s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[1.889s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[1.890s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[1.890s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/ubuntu/Software/ROS2/Bailey_2/bailey'
+[1.893s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[1.893s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[1.894s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[1.894s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[1.894s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[1.894s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[1.894s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[1.895s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[1.895s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[1.945s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['cmake', 'python']
+[1.945s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[1.945s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[1.946s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['python_setup_py']
+[1.946s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python_setup_py'
+[1.948s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extensions ['ignore', 'ignore_ament_install']
+[1.949s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extension 'ignore'
+[1.949s] Level 1:colcon.colcon_core.package_identification:_identify(build) ignored
+[1.951s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extensions ['ignore', 'ignore_ament_install']
+[1.951s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extension 'ignore'
+[1.952s] Level 1:colcon.colcon_core.package_identification:_identify(install) ignored
+[1.956s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extensions ['ignore', 'ignore_ament_install']
+[1.957s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extension 'ignore'
+[1.957s] Level 1:colcon.colcon_core.package_identification:_identify(log) ignored
+[1.959s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ignore', 'ignore_ament_install']
+[1.960s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore'
+[1.960s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore_ament_install'
+[1.960s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_pkg']
+[1.960s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_pkg'
+[1.961s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_meta']
+[1.961s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_meta'
+[1.961s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ros']
+[1.961s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ros'
+[1.962s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['cmake', 'python']
+[1.962s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'cmake'
+[1.962s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python'
+[1.962s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['python_setup_py']
+[1.963s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python_setup_py'
+[1.965s] Level 1:colcon.colcon_core.package_identification:_identify(src/bailey_drive) by extensions ['ignore', 'ignore_ament_install']
+[1.965s] Level 1:colcon.colcon_core.package_identification:_identify(src/bailey_drive) by extension 'ignore'
+[1.966s] Level 1:colcon.colcon_core.package_identification:_identify(src/bailey_drive) by extension 'ignore_ament_install'
+[1.966s] Level 1:colcon.colcon_core.package_identification:_identify(src/bailey_drive) by extensions ['colcon_pkg']
+[1.966s] Level 1:colcon.colcon_core.package_identification:_identify(src/bailey_drive) by extension 'colcon_pkg'
+[1.966s] Level 1:colcon.colcon_core.package_identification:_identify(src/bailey_drive) by extensions ['colcon_meta']
+[1.966s] Level 1:colcon.colcon_core.package_identification:_identify(src/bailey_drive) by extension 'colcon_meta'
+[1.967s] Level 1:colcon.colcon_core.package_identification:_identify(src/bailey_drive) by extensions ['ros']
+[1.967s] Level 1:colcon.colcon_core.package_identification:_identify(src/bailey_drive) by extension 'ros'
+[1.989s] DEBUG:colcon.colcon_core.package_identification:Package 'src/bailey_drive' with type 'ros.ament_python' and name 'bailey_drive'
+[1.993s] Level 1:colcon.colcon_core.package_identification:_identify(src/camera) by extensions ['ignore', 'ignore_ament_install']
+[1.993s] Level 1:colcon.colcon_core.package_identification:_identify(src/camera) by extension 'ignore'
+[1.994s] Level 1:colcon.colcon_core.package_identification:_identify(src/camera) by extension 'ignore_ament_install'
+[1.994s] Level 1:colcon.colcon_core.package_identification:_identify(src/camera) by extensions ['colcon_pkg']
+[1.994s] Level 1:colcon.colcon_core.package_identification:_identify(src/camera) by extension 'colcon_pkg'
+[1.994s] Level 1:colcon.colcon_core.package_identification:_identify(src/camera) by extensions ['colcon_meta']
+[1.995s] Level 1:colcon.colcon_core.package_identification:_identify(src/camera) by extension 'colcon_meta'
+[1.995s] Level 1:colcon.colcon_core.package_identification:_identify(src/camera) by extensions ['ros']
+[1.995s] Level 1:colcon.colcon_core.package_identification:_identify(src/camera) by extension 'ros'
+[2.010s] DEBUG:colcon.colcon_core.package_identification:Package 'src/camera' with type 'ros.ament_python' and name 'camera'
+[2.012s] Level 1:colcon.colcon_core.package_identification:_identify(src/camera_pan_tilt) by extensions ['ignore', 'ignore_ament_install']
+[2.012s] Level 1:colcon.colcon_core.package_identification:_identify(src/camera_pan_tilt) by extension 'ignore'
+[2.013s] Level 1:colcon.colcon_core.package_identification:_identify(src/camera_pan_tilt) by extension 'ignore_ament_install'
+[2.013s] Level 1:colcon.colcon_core.package_identification:_identify(src/camera_pan_tilt) by extensions ['colcon_pkg']
+[2.013s] Level 1:colcon.colcon_core.package_identification:_identify(src/camera_pan_tilt) by extension 'colcon_pkg'
+[2.014s] Level 1:colcon.colcon_core.package_identification:_identify(src/camera_pan_tilt) by extensions ['colcon_meta']
+[2.014s] Level 1:colcon.colcon_core.package_identification:_identify(src/camera_pan_tilt) by extension 'colcon_meta'
+[2.014s] Level 1:colcon.colcon_core.package_identification:_identify(src/camera_pan_tilt) by extensions ['ros']
+[2.014s] Level 1:colcon.colcon_core.package_identification:_identify(src/camera_pan_tilt) by extension 'ros'
+[2.029s] DEBUG:colcon.colcon_core.package_identification:Package 'src/camera_pan_tilt' with type 'ros.ament_python' and name 'camera_pan_tilt'
+[2.031s] Level 1:colcon.colcon_core.package_identification:_identify(src/jetbot_sys_info) by extensions ['ignore', 'ignore_ament_install']
+[2.032s] Level 1:colcon.colcon_core.package_identification:_identify(src/jetbot_sys_info) by extension 'ignore'
+[2.032s] Level 1:colcon.colcon_core.package_identification:_identify(src/jetbot_sys_info) by extension 'ignore_ament_install'
+[2.032s] Level 1:colcon.colcon_core.package_identification:_identify(src/jetbot_sys_info) by extensions ['colcon_pkg']
+[2.033s] Level 1:colcon.colcon_core.package_identification:_identify(src/jetbot_sys_info) by extension 'colcon_pkg'
+[2.033s] Level 1:colcon.colcon_core.package_identification:_identify(src/jetbot_sys_info) by extensions ['colcon_meta']
+[2.033s] Level 1:colcon.colcon_core.package_identification:_identify(src/jetbot_sys_info) by extension 'colcon_meta'
+[2.033s] Level 1:colcon.colcon_core.package_identification:_identify(src/jetbot_sys_info) by extensions ['ros']
+[2.034s] Level 1:colcon.colcon_core.package_identification:_identify(src/jetbot_sys_info) by extension 'ros'
+[2.046s] DEBUG:colcon.colcon_core.package_identification:Package 'src/jetbot_sys_info' with type 'ros.ament_python' and name 'jetbot_sys_info'
+[2.048s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_rtimulib) by extensions ['ignore', 'ignore_ament_install']
+[2.049s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_rtimulib) by extension 'ignore'
+[2.049s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_rtimulib) by extension 'ignore_ament_install'
+[2.049s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_rtimulib) by extensions ['colcon_pkg']
+[2.050s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_rtimulib) by extension 'colcon_pkg'
+[2.050s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_rtimulib) by extensions ['colcon_meta']
+[2.050s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_rtimulib) by extension 'colcon_meta'
+[2.051s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_rtimulib) by extensions ['ros']
+[2.051s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_rtimulib) by extension 'ros'
+[2.066s] DEBUG:colcon.colcon_core.package_identification:Package 'src/ros2_rtimulib' with type 'ros.ament_python' and name 'ros2_rtimulib'
+[2.067s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[2.067s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[2.067s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[2.067s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[2.068s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[2.141s] INFO:colcon.colcon_core.package_selection:Skipping not selected package 'camera' in 'src/camera'
+[2.142s] INFO:colcon.colcon_core.package_selection:Skipping not selected package 'camera_pan_tilt' in 'src/camera_pan_tilt'
+[2.142s] INFO:colcon.colcon_core.package_selection:Skipping not selected package 'jetbot_sys_info' in 'src/jetbot_sys_info'
+[2.142s] INFO:colcon.colcon_core.package_selection:Skipping not selected package 'ros2_rtimulib' in 'src/ros2_rtimulib'
+[2.155s] Level 5:colcon.colcon_core.verb:set package 'bailey_drive' build argument 'cmake_args' from command line to 'None'
+[2.155s] Level 5:colcon.colcon_core.verb:set package 'bailey_drive' build argument 'cmake_target' from command line to 'None'
+[2.156s] Level 5:colcon.colcon_core.verb:set package 'bailey_drive' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[2.156s] Level 5:colcon.colcon_core.verb:set package 'bailey_drive' build argument 'cmake_clean_cache' from command line to 'False'
+[2.156s] Level 5:colcon.colcon_core.verb:set package 'bailey_drive' build argument 'cmake_clean_first' from command line to 'False'
+[2.156s] Level 5:colcon.colcon_core.verb:set package 'bailey_drive' build argument 'cmake_force_configure' from command line to 'False'
+[2.156s] Level 5:colcon.colcon_core.verb:set package 'bailey_drive' build argument 'ament_cmake_args' from command line to 'None'
+[2.156s] Level 5:colcon.colcon_core.verb:set package 'bailey_drive' build argument 'catkin_cmake_args' from command line to 'None'
+[2.156s] Level 5:colcon.colcon_core.verb:set package 'bailey_drive' build argument 'catkin_skip_building_tests' from command line to 'False'
+[2.156s] DEBUG:colcon.colcon_core.verb:Building package 'bailey_drive' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/ubuntu/Software/ROS2/Bailey_2/bailey/build/bailey_drive', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/ubuntu/Software/ROS2/Bailey_2/bailey/install/bailey_drive', 'merge_install': False, 'path': '/home/ubuntu/Software/ROS2/Bailey_2/bailey/src/bailey_drive', 'symlink_install': True, 'test_result_base': None}
+[2.158s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[2.170s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[2.171s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/ubuntu/Software/ROS2/Bailey_2/bailey/src/bailey_drive' with build type 'ament_python'
+[2.172s] Level 1:colcon.colcon_core.shell:create_environment_hook('bailey_drive', 'ament_prefix_path')
+[2.187s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[2.189s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ubuntu/Software/ROS2/Bailey_2/bailey/install/bailey_drive/share/bailey_drive/hook/ament_prefix_path.ps1'
+[2.207s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/ubuntu/Software/ROS2/Bailey_2/bailey/install/bailey_drive/share/bailey_drive/hook/ament_prefix_path.dsv'
+[2.259s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ubuntu/Software/ROS2/Bailey_2/bailey/install/bailey_drive/share/bailey_drive/hook/ament_prefix_path.sh'
+[2.280s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[2.280s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[2.345s] DEBUG:colcon.colcon_core.shell:Ignoring prefix path '/opt/ros/foxy'
+[3.503s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/ubuntu/Software/ROS2/Bailey_2/bailey/src/bailey_drive'
+[3.506s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[3.506s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[3.552s] DEBUG:colcon.colcon_core.shell:Ignoring prefix path '/opt/ros/foxy'
+[3.674s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/ubuntu/Software/ROS2/Bailey_2/bailey/build/bailey_drive': PYTHONPATH=/home/ubuntu/Software/ROS2/Bailey_2/bailey/install/bailey_drive/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py develop --prefix /home/ubuntu/Software/ROS2/Bailey_2/bailey/install/bailey_drive --editable --build-directory /home/ubuntu/Software/ROS2/Bailey_2/bailey/build/bailey_drive/build --no-deps install_data --install-dir /home/ubuntu/Software/ROS2/Bailey_2/bailey/install/bailey_drive
+[6.002s] Level 1:colcon.colcon_core.shell:create_environment_hook('bailey_drive', 'pythonpath_develop')
+[6.005s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ubuntu/Software/ROS2/Bailey_2/bailey/build/bailey_drive/share/bailey_drive/hook/pythonpath_develop.ps1'
+[6.007s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/ubuntu/Software/ROS2/Bailey_2/bailey/build/bailey_drive' returned '0': PYTHONPATH=/home/ubuntu/Software/ROS2/Bailey_2/bailey/install/bailey_drive/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py develop --prefix /home/ubuntu/Software/ROS2/Bailey_2/bailey/install/bailey_drive --editable --build-directory /home/ubuntu/Software/ROS2/Bailey_2/bailey/build/bailey_drive/build --no-deps install_data --install-dir /home/ubuntu/Software/ROS2/Bailey_2/bailey/install/bailey_drive
+[6.019s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/ubuntu/Software/ROS2/Bailey_2/bailey/build/bailey_drive/share/bailey_drive/hook/pythonpath_develop.dsv'
+[6.033s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ubuntu/Software/ROS2/Bailey_2/bailey/build/bailey_drive/share/bailey_drive/hook/pythonpath_develop.sh'
+[6.065s] Level 1:colcon.colcon_core.environment:checking '/home/ubuntu/Software/ROS2/Bailey_2/bailey/install/bailey_drive' for CMake module files
+[6.086s] Level 1:colcon.colcon_core.environment:checking '/home/ubuntu/Software/ROS2/Bailey_2/bailey/install/bailey_drive' for CMake config files
+[6.115s] Level 1:colcon.colcon_core.environment:checking '/home/ubuntu/Software/ROS2/Bailey_2/bailey/install/bailey_drive/lib'
+[6.118s] Level 1:colcon.colcon_core.environment:checking '/home/ubuntu/Software/ROS2/Bailey_2/bailey/install/bailey_drive/bin'
+[6.119s] Level 1:colcon.colcon_core.environment:checking '/home/ubuntu/Software/ROS2/Bailey_2/bailey/install/bailey_drive/lib/pkgconfig/bailey_drive.pc'
+[6.119s] Level 1:colcon.colcon_core.environment:checking '/home/ubuntu/Software/ROS2/Bailey_2/bailey/install/bailey_drive/lib/python3.8/site-packages'
+[6.120s] Level 1:colcon.colcon_core.shell:create_environment_hook('bailey_drive', 'pythonpath')
+[6.123s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ubuntu/Software/ROS2/Bailey_2/bailey/install/bailey_drive/share/bailey_drive/hook/pythonpath.ps1'
+[6.136s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/ubuntu/Software/ROS2/Bailey_2/bailey/install/bailey_drive/share/bailey_drive/hook/pythonpath.dsv'
+[6.150s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/ubuntu/Software/ROS2/Bailey_2/bailey/install/bailey_drive/share/bailey_drive/hook/pythonpath.sh'
+[6.166s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(bailey_drive)
+[6.170s] INFO:colcon.colcon_core.shell:Creating package script '/home/ubuntu/Software/ROS2/Bailey_2/bailey/install/bailey_drive/share/bailey_drive/package.ps1'
+[6.188s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/ubuntu/Software/ROS2/Bailey_2/bailey/install/bailey_drive/share/bailey_drive/package.dsv'
+[6.209s] INFO:colcon.colcon_core.shell:Creating package script '/home/ubuntu/Software/ROS2/Bailey_2/bailey/install/bailey_drive/share/bailey_drive/package.sh'
+[6.227s] INFO:colcon.colcon_core.shell:Creating package script '/home/ubuntu/Software/ROS2/Bailey_2/bailey/install/bailey_drive/share/bailey_drive/package.bash'
+[6.243s] INFO:colcon.colcon_core.shell:Creating package script '/home/ubuntu/Software/ROS2/Bailey_2/bailey/install/bailey_drive/share/bailey_drive/package.zsh'
+[6.262s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/ubuntu/Software/ROS2/Bailey_2/bailey/install/bailey_drive/share/colcon-core/packages/bailey_drive)
+[6.268s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[6.269s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[6.270s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '0'
+[6.270s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[6.345s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.notify_send': Could not find 'notify-send'
+[6.345s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[6.345s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[6.346s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[6.348s] DEBUG:colcon.colcon_notification.desktop_notification.notify2:Failed to initialize notify2: org.freedesktop.DBus.Error.ServiceUnknown: The name org.freedesktop.Notifications was not provided by any .service files
+[6.349s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[6.351s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/ubuntu/Software/ROS2/Bailey_2/bailey/install/local_setup.ps1'
+[6.365s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/ubuntu/Software/ROS2/Bailey_2/bailey/install/_local_setup_util_ps1.py'
+[6.385s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/ubuntu/Software/ROS2/Bailey_2/bailey/install/setup.ps1'
+[6.440s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/ubuntu/Software/ROS2/Bailey_2/bailey/install/local_setup.sh'
+[6.453s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/ubuntu/Software/ROS2/Bailey_2/bailey/install/_local_setup_util_sh.py'
+[6.469s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/ubuntu/Software/ROS2/Bailey_2/bailey/install/setup.sh'
+[6.529s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/ubuntu/Software/ROS2/Bailey_2/bailey/install/local_setup.bash'
+[6.545s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/ubuntu/Software/ROS2/Bailey_2/bailey/install/setup.bash'
+[6.597s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/ubuntu/Software/ROS2/Bailey_2/bailey/install/local_setup.zsh'
+[6.616s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/ubuntu/Software/ROS2/Bailey_2/bailey/install/setup.zsh'

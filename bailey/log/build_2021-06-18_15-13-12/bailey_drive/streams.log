@@ -1,0 +1,17 @@
+[1.500s] Invoking command in '/home/ubuntu/Software/ROS2/Bailey_2/bailey/build/bailey_drive': PYTHONPATH=/home/ubuntu/Software/ROS2/Bailey_2/bailey/install/bailey_drive/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py develop --prefix /home/ubuntu/Software/ROS2/Bailey_2/bailey/install/bailey_drive --editable --build-directory /home/ubuntu/Software/ROS2/Bailey_2/bailey/build/bailey_drive/build --no-deps install_data --install-dir /home/ubuntu/Software/ROS2/Bailey_2/bailey/install/bailey_drive
+[2.587s] running develop
+[3.329s] running egg_info
+[3.330s] writing bailey_drive.egg-info/PKG-INFO
+[3.348s] writing dependency_links to bailey_drive.egg-info/dependency_links.txt
+[3.363s] writing entry points to bailey_drive.egg-info/entry_points.txt
+[3.376s] writing requirements to bailey_drive.egg-info/requires.txt
+[3.388s] writing top-level names to bailey_drive.egg-info/top_level.txt
+[3.555s] reading manifest file 'bailey_drive.egg-info/SOURCES.txt'
+[3.580s] writing manifest file 'bailey_drive.egg-info/SOURCES.txt'
+[3.602s] running build_ext
+[3.607s] Creating /home/ubuntu/Software/ROS2/Bailey_2/bailey/install/bailey_drive/lib/python3.8/site-packages/bailey-drive.egg-link (link to .)
+[3.649s] Installing ros2_bailey_drive script to /home/ubuntu/Software/ROS2/Bailey_2/bailey/install/bailey_drive/lib/bailey_drive
+[3.667s] 
+[3.667s] Installed /home/ubuntu/Software/ROS2/Bailey_2/bailey/build/bailey_drive
+[3.671s] running install_data
+[3.782s] Invoked command in '/home/ubuntu/Software/ROS2/Bailey_2/bailey/build/bailey_drive' returned '0': PYTHONPATH=/home/ubuntu/Software/ROS2/Bailey_2/bailey/install/bailey_drive/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py develop --prefix /home/ubuntu/Software/ROS2/Bailey_2/bailey/install/bailey_drive --editable --build-directory /home/ubuntu/Software/ROS2/Bailey_2/bailey/build/bailey_drive/build --no-deps install_data --install-dir /home/ubuntu/Software/ROS2/Bailey_2/bailey/install/bailey_drive
