@@ -1,0 +1,27 @@
+[1.674s] Invoking command in '/home/ubuntu/Software/ROS2/Bailey_2/bailey/build/bailey_drive': PYTHONPATH=/home/ubuntu/Software/ROS2/Bailey_2/bailey/install/bailey_drive/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py develop --prefix /home/ubuntu/Software/ROS2/Bailey_2/bailey/install/bailey_drive --uninstall --editable --build-directory /home/ubuntu/Software/ROS2/Bailey_2/bailey/build/bailey_drive/build
+[2.787s] running develop
+[3.608s] Invoked command in '/home/ubuntu/Software/ROS2/Bailey_2/bailey/build/bailey_drive' returned '0': PYTHONPATH=/home/ubuntu/Software/ROS2/Bailey_2/bailey/install/bailey_drive/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py develop --prefix /home/ubuntu/Software/ROS2/Bailey_2/bailey/install/bailey_drive --uninstall --editable --build-directory /home/ubuntu/Software/ROS2/Bailey_2/bailey/build/bailey_drive/build
+[3.622s] Invoking command in '/home/ubuntu/Software/ROS2/Bailey_2/bailey/src/bailey_drive': PYTHONPATH=/home/ubuntu/Software/ROS2/Bailey_2/bailey/install/bailey_drive/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/bailey_drive build --build-base /home/ubuntu/Software/ROS2/Bailey_2/bailey/build/bailey_drive/build install --prefix /home/ubuntu/Software/ROS2/Bailey_2/bailey/install/bailey_drive --record /home/ubuntu/Software/ROS2/Bailey_2/bailey/build/bailey_drive/install.log --single-version-externally-managed
+[4.754s] running egg_info
+[4.758s] writing ../../build/bailey_drive/bailey_drive.egg-info/PKG-INFO
+[4.775s] writing dependency_links to ../../build/bailey_drive/bailey_drive.egg-info/dependency_links.txt
+[4.788s] writing entry points to ../../build/bailey_drive/bailey_drive.egg-info/entry_points.txt
+[4.806s] writing requirements to ../../build/bailey_drive/bailey_drive.egg-info/requires.txt
+[4.819s] writing top-level names to ../../build/bailey_drive/bailey_drive.egg-info/top_level.txt
+[5.017s] reading manifest file '../../build/bailey_drive/bailey_drive.egg-info/SOURCES.txt'
+[5.041s] writing manifest file '../../build/bailey_drive/bailey_drive.egg-info/SOURCES.txt'
+[5.049s] running build
+[5.050s] running build_py
+[5.065s] copying bailey_drive/bailey_drive.py -> /home/ubuntu/Software/ROS2/Bailey_2/bailey/build/bailey_drive/build/lib/bailey_drive
+[5.093s] running install
+[5.098s] running install_lib
+[5.122s] copying /home/ubuntu/Software/ROS2/Bailey_2/bailey/build/bailey_drive/build/lib/bailey_drive/bailey_drive.py -> /home/ubuntu/Software/ROS2/Bailey_2/bailey/install/bailey_drive/lib/python3.8/site-packages/bailey_drive
+[5.168s] byte-compiling /home/ubuntu/Software/ROS2/Bailey_2/bailey/install/bailey_drive/lib/python3.8/site-packages/bailey_drive/bailey_drive.py to bailey_drive.cpython-38.pyc
+[5.217s] running install_data
+[5.227s] running install_egg_info
+[5.236s] removing '/home/ubuntu/Software/ROS2/Bailey_2/bailey/install/bailey_drive/lib/python3.8/site-packages/bailey_drive-0.0.0-py3.8.egg-info' (and everything under it)
+[5.275s] Copying ../../build/bailey_drive/bailey_drive.egg-info to /home/ubuntu/Software/ROS2/Bailey_2/bailey/install/bailey_drive/lib/python3.8/site-packages/bailey_drive-0.0.0-py3.8.egg-info
+[5.458s] running install_scripts
+[5.542s] Installing ros2_bailey_drive script to /home/ubuntu/Software/ROS2/Bailey_2/bailey/install/bailey_drive/lib/bailey_drive
+[5.558s] writing list of installed files to '/home/ubuntu/Software/ROS2/Bailey_2/bailey/build/bailey_drive/install.log'
+[5.673s] Invoked command in '/home/ubuntu/Software/ROS2/Bailey_2/bailey/src/bailey_drive' returned '0': PYTHONPATH=/home/ubuntu/Software/ROS2/Bailey_2/bailey/install/bailey_drive/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/bailey_drive build --build-base /home/ubuntu/Software/ROS2/Bailey_2/bailey/build/bailey_drive/build install --prefix /home/ubuntu/Software/ROS2/Bailey_2/bailey/install/bailey_drive --record /home/ubuntu/Software/ROS2/Bailey_2/bailey/build/bailey_drive/install.log --single-version-externally-managed

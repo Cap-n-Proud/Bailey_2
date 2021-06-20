@@ -88,27 +88,30 @@ class Robot(Node):
         self.right_trim = right_trim
 
     def move(self, speed, steer):
-        speed_l = self.pid(euler[0])
-        speed_r = self.pid(euler[0])
+        speed_l = speed
+        speed_r = speed
         if not self.simulation:
+            time.sleep(0.1)
             t1 = threading.Thread(
-                target=motor_A.motor_run,
-                args=(GpioPins_MA, speed_l / 10000, 3, True, False, "full", 1),
+                target=self.motor_A.motor_run,
+                args=(self.GpioPins_MA, speed_l / 10000, 1, True, False, "full", 1),
             )
             # motor_A.motor_run(GpioPins_MA, s, 200, True, True, "full", 1)
             t1.start()
             t2 = threading.Thread(
-                target=motor_B.motor_run,
-                args=(GpioPins_MB, -speed_r / 10000, 3, True, False, "full", 1),
+                target=self.motor_B.motor_run,
+                args=(self.GpioPins_MB, -speed_r / 10000, 1, True, False, "full", 1),
             )
             t2.start()
 
         else:
             self.get_logger().info(
-                "Simulation mode (speed_l,speed_r): ("
-                + str(speed_l)
+                "Simulation mode: "
+                + str(round(speed_l / 10000, 7))
                 + ","
-                + str(speed_l)
+                + str(round(speed_r, 2))
+                + "angle: "
+                + str(round(euler[0], 2))
                 + ")"
             )
 
@@ -122,10 +125,9 @@ class Robot(Node):
             False,
             1,
         )
-        set_point = 120
         print(
             "PID: "
-            + str(round(self.pid(euler[0]), 5))
+            + str(round(self.pid(euler[0] / 10000), 7))
             + "\t: "
             + str(euler[0])
             + "\t: "
@@ -133,6 +135,7 @@ class Robot(Node):
             + "\t: "
             + str(euler[2])
         )
+        self.move(self.pid(euler[0]), 0)
 
     def joy_topic(self, msg):
         if self.debug:

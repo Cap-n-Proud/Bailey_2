@@ -61,9 +61,7 @@ class Robot(Node):
         self.GpioPins_MA = [13, 11, 15, 12]
         self.GpioPins_MB = [37, 33, 35, 16]
         # Max spees is [-0.002,0.002], will need to divide teh PID value accorgingly
-        self.pid = PID(
-            1, 0, 0, output_limits=(-200, 200), setpoint=41, sample_time=0.08
-        )
+        self.pid = PID(1, 0, 0, output_limits=(-15, 15), setpoint=41, sample_time=0.08)
 
         # Initialize motors
         if not self.simulation:
@@ -71,8 +69,8 @@ class Robot(Node):
 
             # Declare an named instance of class pass a name and type of motor
             # type of motor(Nema) is case sensitive
-            self.motor_A = BYJMotor("motor_A", "Nema")
-            self.motor_B = BYJMotor("motor_B", "Nema")
+            self.motor_A = BYJMotor("motor_A", "Nema", max_speed)
+            self.motor_B = BYJMotor("motor_B", "Nema", max_speed)
             self.get_logger().info("Motors initialized successfully")
 
     def set_steer_gain(self, steer_gain):
@@ -88,27 +86,59 @@ class Robot(Node):
         self.right_trim = right_trim
 
     def move(self, speed, steer):
-        speed_l = self.pid(euler[0])
-        speed_r = self.pid(euler[0])
+        speed_l = speed
+        speed_r = speed
         if not self.simulation:
+            time.sleep(0.1)
             t1 = threading.Thread(
-                target=motor_A.motor_run,
-                args=(GpioPins_MA, speed_l / 10000, 3, True, False, "full", 1),
+                target=self.motor_A.motor_run,
+                args=(self.GpioPins_MA, speed_l / 10000, 1, True, False, "full", 1),
             )
             # motor_A.motor_run(GpioPins_MA, s, 200, True, True, "full", 1)
             t1.start()
             t2 = threading.Thread(
-                target=motor_B.motor_run,
-                args=(GpioPins_MB, -speed_r / 10000, 3, True, False, "full", 1),
+                target=self.motor_B.motor_run,
+                args=(self.GpioPins_MB, -speed_r / 10000, 1, True, False, "full", 1),
             )
             t2.start()
 
         else:
             self.get_logger().info(
-                "Simulation mode (speed_l,speed_r): ("
-                + str(speed_l)
+                "Simulation mode: "
+                + str(round(speed_l / 10000, 7))
                 + ","
-                + str(speed_l)
+                + str(round(speed_r, 2))
+                + "angle: "
+                + str(round(euler[0], 2))
+                + ")"
+            )
+
+    def balance(self, angle):
+        angle_l = speed
+        angle_r = speed
+        speed = 0.8 * 255
+        if not self.simulation:
+            time.sleep(0.01)
+            t1 = threading.Thread(
+                target=self.motor_A.motor_run,
+                args=(self.GpioPins_MA, speed, angle, "d", True, False, "full", 1),
+            )
+            # motor_A.motor_run(GpioPins_MA, s, 200, True, True, "full", 1)
+            t1.start()
+            t2 = threading.Thread(
+                target=self.motor_B.motor_run,
+                args=(self.GpioPins_MB, speed, -angle, "d", True, False, "full", 1),
+            )
+            t2.start()
+
+        else:
+            self.get_logger().info(
+                "Simulation mode: "
+                + str(round(speed_l / 10000, 7))
+                + ","
+                + str(round(speed_r, 2))
+                + "angle: "
+                + str(round(euler[0], 2))
                 + ")"
             )
 
@@ -122,10 +152,9 @@ class Robot(Node):
             False,
             1,
         )
-        set_point = 120
         print(
             "PID: "
-            + str(round(self.pid(euler[0]), 5))
+            + str(round(self.pid(euler[0] / 10000), 7))
             + "\t: "
             + str(euler[0])
             + "\t: "
@@ -133,6 +162,7 @@ class Robot(Node):
             + "\t: "
             + str(euler[2])
         )
+        self.move(self.pid(euler[0]), 0)
 
     def joy_topic(self, msg):
         if self.debug:

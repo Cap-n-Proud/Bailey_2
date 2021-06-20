@@ -27,6 +27,10 @@ import RPi.GPIO as GPIO
 
 # ==================== CLASS SECTION ===============================
 
+# TODO: NEED TO CHNAGE LOGIC TO SET TARGET AND THEN RUN A STEP AT THE TIME; TARGET ANS SEPEED WILL CHANGE CONTINUSLY.
+# THIS WILL AVOUD MANGING A FILO QUEQUE
+# setSpeed
+
 
 class StopMotorInterrupt(Exception):
     """ Stop the motor """
@@ -34,32 +38,75 @@ class StopMotorInterrupt(Exception):
     pass
 
 
-class BYJMotor(object):
-    """class to control a 28BYJ-48 stepper motor with ULN2003 controller
-    by a raspberry pi"""
-
-    def __init__(self, name="BYJMotorX", motor_type="28BYJ"):
+class Stepper(object):
+    def __init__(
+        self,
+        name="BYJMotorX",
+        motor_type="28BYJ",
+        gpiopins=[0, 0, 0, 0],
+        max_speed=0.002,
+        min_speed=0.06,
+        move_units="d",
+    ):
         self.name = name
         self.motor_type = motor_type
         GPIO.setmode(GPIO.BOARD)
         GPIO.setwarnings(False)
         self.stop_motor = False
+        self.speed_motor_range = [min_speed, max_speed]
+        self.speed_lib_range = [0, 255]
+        self.target = 0
+        self.current_pos = 0
+        self.deg_per_step = 7.2
+        self.steps_per_rev = int(360 / self.deg_per_step)
+        self.step_angle = 0  # Assume the way it is pointing is zero degrees
+        self.stepInterval = 0
+        self.lastStepTime = 0
+        self.move_units = "d"
+        self.speed = 0.001
+        self.gpiopins = gpiopins
+
+    def distance_to_go(self):
+        return self.target - self.current_pos
+
+    def is_step_due(self):
+        if time.now() - self.lastStepTime <= self.stepInterval:
+            return True
+        else:
+            return False
+
+    def set_target(self, t):
+        if self.move_units == "d":
+            self.target = steps_calc(t, "Full")
+        else:
+            self.target = t
+
+    def set_speed(self, s):
+        self.speed = s
+
+    def set_move_units(self, mu):
+        if mu == "d":
+            self.move_units == "d"
+        elif mu == "s":
+            self.move_units == "s"
+        else:
+            print("ERROR")
 
     def motor_stop(self):
         """ Stop the motor """
         self.stop_motor = True
 
-    def motor_run(
-        self,
-        gpiopins,
-        wait=0.001,
-        steps=512,
-        ccwise=False,
-        verbose=False,
-        steptype="half",
-        initdelay=0.001,
-    ):
-        """motor_run,  moves stepper motor based on 7 inputs
+    def map_range(self, a, b, s):
+        # a = [from_lower, from_upper]
+        # b = [to_lower, to_upper]
+        (a1, a2), (b1, b2) = a, b
+        return b1 + ((s - a1) * (b2 - b1) / (a2 - a1))
+
+    def motor_run(self, ccwise=False, verbose=False, steptype="half", initdelay=0.001):
+
+        # Needs to be called in a loop. It checks if a step is due
+        """Runs motor until target position is reached. Need to be called in a loop as it moves one step
+        motor_run,  moves stepper motor based on 7 inputs
 
          (1) GPIOPins, type=list of ints 4 long, help="list of
          4 GPIO pins to connect to motor controller
@@ -82,48 +129,13 @@ class BYJMotor(object):
          GPIO pins initialized but before motor is moved.
 
         """
+
         try:
-            self.stop_motor = False
+            # self.stop_motor = False
             for pin in gpiopins:
                 GPIO.setup(pin, GPIO.OUT)
                 GPIO.output(pin, False)
             time.sleep(initdelay)
-
-            # select step based on user input
-            # Each step_sequence is a list containing GPIO pins that should be set to High
-            if steptype == "half":  # half stepping.
-                step_sequence = list(range(0, 8))
-                step_sequence[0] = [gpiopins[0]]
-                step_sequence[1] = [gpiopins[0], gpiopins[1]]
-                step_sequence[2] = [gpiopins[1]]
-                step_sequence[3] = [gpiopins[1], gpiopins[2]]
-                step_sequence[4] = [gpiopins[2]]
-                step_sequence[5] = [gpiopins[2], gpiopins[3]]
-                step_sequence[6] = [gpiopins[3]]
-                step_sequence[7] = [gpiopins[3], gpiopins[0]]
-            elif steptype == "full":  # full stepping.
-                step_sequence = list(range(0, 4))
-                step_sequence[0] = [gpiopins[0], gpiopins[1]]
-                step_sequence[1] = [gpiopins[1], gpiopins[2]]
-                step_sequence[2] = [gpiopins[2], gpiopins[3]]
-                step_sequence[3] = [gpiopins[0], gpiopins[3]]
-            elif steptype == "wave":  # wave driving
-                step_sequence = list(range(0, 4))
-                step_sequence[0] = [gpiopins[0]]
-                step_sequence[1] = [gpiopins[1]]
-                step_sequence[2] = [gpiopins[2]]
-                step_sequence[3] = [gpiopins[3]]
-
-            else:
-                print("Error: unknown step type ; half, full or wave")
-                quit()
-            if wait < 0:
-                ccwise = True
-                wait = abs(wait)
-                #  To run motor in reverse we flip the sequence order.
-                # if ccwise:
-                step_sequence.reverse()
-                print("reversed")
 
             def display_degree():
                 """ display the degree value at end of run if verbose"""
@@ -159,9 +171,47 @@ class BYJMotor(object):
                         else:
                             print("GPIO pin off {}".format(pin_print))
 
+            # select step based on user input
+            # Each step_sequence is a list containing GPIO pins that should be set to High
+            if steptype == "half":  # half stepping.
+                step_sequence = list(range(0, 8))
+                step_sequence[0] = [gpiopins[0]]
+                step_sequence[1] = [gpiopins[0], gpiopins[1]]
+                step_sequence[2] = [gpiopins[1]]
+                step_sequence[3] = [gpiopins[1], gpiopins[2]]
+                step_sequence[4] = [gpiopins[2]]
+                step_sequence[5] = [gpiopins[2], gpiopins[3]]
+                step_sequence[6] = [gpiopins[3]]
+                step_sequence[7] = [gpiopins[3], gpiopins[0]]
+            elif steptype == "full":  # full stepping.
+                step_sequence = list(range(0, 4))
+                step_sequence[0] = [gpiopins[0], gpiopins[1]]
+                step_sequence[1] = [gpiopins[1], gpiopins[2]]
+                step_sequence[2] = [gpiopins[2], gpiopins[3]]
+                step_sequence[3] = [gpiopins[0], gpiopins[3]]
+            elif steptype == "wave":  # wave driving
+                step_sequence = list(range(0, 4))
+                step_sequence[0] = [gpiopins[0]]
+                step_sequence[1] = [gpiopins[1]]
+                step_sequence[2] = [gpiopins[2]]
+                step_sequence[3] = [gpiopins[3]]
+
+            else:
+                print("Error: unknown step type ; half, full or wave")
+                quit()
+            if self.target < 0:
+                ccwise = True
+                self.target = abs(self.target)
+                #  To run motor in reverse we flip the sequence order.
+                step_sequence.reverse()
+
             # Iterate through the pins turning them on and off.
-            steps_remaining = steps
-            while steps_remaining > 0:
+
+            steps_remaining = distance_to_go()
+            # if there are steps remaining we move
+            # Need to add a condition to check if a step is due
+
+            if steps_remaining and is_step_due():
                 for pin_list in step_sequence:
                     for pin in gpiopins:
                         if self.stop_motor:
@@ -172,13 +222,26 @@ class BYJMotor(object):
                             else:
                                 GPIO.output(pin, False)
                     print_status(pin_list)
-                    time.sleep(wait)
+                    # Need to change the mapping below to add speed, acceleration etc
+                    if steps_remaining != 0:
+                        time.sleep(
+                            self.map_range(
+                                self.speed_lib_range, self.speed_motor_range, self.speed
+                            )
+                        )
                 steps_remaining -= 1
+                if ccwise:
+                    self.current_pos += 1
+                else:
+                    self.current_pos -= 1
 
         except KeyboardInterrupt:
             print("User Keyboard Interrupt : RpiMotorLib: ")
         except StopMotorInterrupt:
             print("Stop Motor Interrupt : RpiMotorLib: ")
+            self.stop_motor = False
+            return
+
         except Exception as motor_error:
             print(sys.exc_info()[0])
             print(motor_error)
@@ -190,7 +253,7 @@ class BYJMotor(object):
                 print("Motor type = {}".format(self.motor_type))
                 print("Initial delay = {}".format(initdelay))
                 print("GPIO pins = {}".format(gpiopins))
-                print("Wait time = {}".format(wait))
+                print("Speed = {}".format(self.speed))
                 print("Number of step sequences = {}".format(steps))
                 print("Size of step sequence = {}".format(len(step_sequence)))
                 print("Number of steps = {}".format(steps * len(step_sequence)))
@@ -202,281 +265,6 @@ class BYJMotor(object):
             # switch off pins at end
             for pin in gpiopins:
                 GPIO.output(pin, False)
-
-
-class A4988Nema(object):
-    """ Class to control a Nema bi-polar stepper motor with a A4988 also tested with DRV8825"""
-
-    def __init__(self, direction_pin, step_pin, mode_pins, motor_type="A4988"):
-        """ class init method 3 inputs
-        (1) direction type=int , help=GPIO pin connected to DIR pin of IC
-        (2) step_pin type=int , help=GPIO pin connected to STEP of IC
-        (3) mode_pins type=tuple of 3 ints, help=GPIO pins connected to
-        Microstep Resolution pins MS1-MS3 of IC, can be set to (-1,-1,-1) to turn off
-        GPIO resolution.
-        (4) motor_type type=string, help=Type of motor two options: A4988 or DRV8825
-        """
-        self.motor_type = motor_type
-        self.direction_pin = direction_pin
-        self.step_pin = step_pin
-
-        if mode_pins[0] != -1:
-            self.mode_pins = mode_pins
-        else:
-            self.mode_pins = False
-
-        self.stop_motor = False
-        GPIO.setmode(GPIO.BCM)
-        GPIO.setwarnings(False)
-
-    def motor_stop(self):
-        """ Stop the motor """
-        self.stop_motor = True
-
-    def resolution_set(self, steptype):
-        """ method to calculate step resolution
-        based on motor type and steptype"""
-        if self.motor_type == "A4988":
-            resolution = {
-                "Full": (0, 0, 0),
-                "Half": (1, 0, 0),
-                "1/4": (0, 1, 0),
-                "1/8": (1, 1, 0),
-                "1/16": (1, 1, 1),
-            }
-        elif self.motor_type == "DRV8825":
-            resolution = {
-                "Full": (0, 0, 0),
-                "Half": (1, 0, 0),
-                "1/4": (0, 1, 0),
-                "1/8": (1, 1, 0),
-                "1/16": (0, 0, 1),
-                "1/32": (1, 0, 1),
-            }
-        elif self.motor_type == "LV8729":
-            resolution = {
-                "Full": (0, 0, 0),
-                "Half": (1, 0, 0),
-                "1/4": (0, 1, 0),
-                "1/8": (1, 1, 0),
-                "1/16": (0, 0, 1),
-                "1/32": (1, 0, 1),
-                "1/64": (0, 1, 1),
-                "1/128": (1, 1, 1),
-            }
-        else:
-            print("Error invalid motor_type: {}".format(self.motor_type))
-            quit()
-
-        # error check stepmode
-        if steptype in resolution:
-            pass
-        else:
-            print("Error invalid steptype: {}".format(steptype))
-            quit()
-
-        if self.mode_pins != False:
-            GPIO.output(self.mode_pins, resolution[steptype])
-
-    def motor_go(
-        self,
-        clockwise=False,
-        steptype="Full",
-        steps=200,
-        stepdelay=0.005,
-        verbose=False,
-        initdelay=0.05,
-    ):
-        """ motor_go,  moves stepper motor based on 6 inputs
-
-         (1) clockwise, type=bool default=False
-         help="Turn stepper counterclockwise"
-         (2) steptype, type=string , default=Full help= type of drive to
-         step motor 5 options
-            (Full, Half, 1/4, 1/8, 1/16) 1/32 for DRV8825 only
-         (3) steps, type=int, default=200, help=Number of steps sequence's
-         to execute. Default is one revolution , 200 in Full mode.
-         (4) stepdelay, type=float, default=0.05, help=Time to wait
-         (in seconds) between steps.
-         (5) verbose, type=bool  type=bool default=False
-         help="Write pin actions",
-         (6) initdelay, type=float, default=1mS, help= Intial delay after
-         GPIO pins initialized but before motor is moved.
-
-        """
-        self.stop_motor = False
-        # setup GPIO
-        GPIO.setup(self.direction_pin, GPIO.OUT)
-        GPIO.setup(self.step_pin, GPIO.OUT)
-        GPIO.output(self.direction_pin, clockwise)
-        if self.mode_pins != False:
-            GPIO.setup(self.mode_pins, GPIO.OUT)
-
-        try:
-            # dict resolution
-            self.resolution_set(steptype)
-            time.sleep(initdelay)
-
-            for i in range(steps):
-                if self.stop_motor:
-                    raise StopMotorInterrupt
-                else:
-                    GPIO.output(self.step_pin, True)
-                    time.sleep(stepdelay)
-                    GPIO.output(self.step_pin, False)
-                    time.sleep(stepdelay)
-                    if verbose:
-                        print("Steps count {}".format(i + 1), end="\r", flush=True)
-
-        except KeyboardInterrupt:
-            print("User Keyboard Interrupt : RpiMotorLib:")
-        except StopMotorInterrupt:
-            print("Stop Motor Interrupt : RpiMotorLib: ")
-        except Exception as motor_error:
-            print(sys.exc_info()[0])
-            print(motor_error)
-            print("RpiMotorLib  : Unexpected error:")
-        else:
-            # print report status
-            if verbose:
-                print("\nRpiMotorLib, Motor Run finished, Details:.\n")
-                print("Motor type = {}".format(self.motor_type))
-                print("Clockwise = {}".format(clockwise))
-                print("Step Type = {}".format(steptype))
-                print("Number of steps = {}".format(steps))
-                print("Step Delay = {}".format(stepdelay))
-                print("Intial delay = {}".format(initdelay))
-                print(
-                    "Size of turn in degrees = {}".format(degree_calc(steps, steptype))
-                )
-        finally:
-            # cleanup
-            GPIO.output(self.step_pin, False)
-            GPIO.output(self.direction_pin, False)
-            if self.mode_pins != False:
-                for pin in self.mode_pins:
-                    GPIO.output(pin, False)
-
-
-class A3967EasyNema(object):
-    """ Class to control a Nema bi-polar stepper motor with A3967 Easy driver
-    motor controller """
-
-    def __init__(self, direction_pin, step_pin, mode_pins):
-        """ class init method 3 inputs
-        (1) direction type=int , help=GPIO pin connected to DIR pin of IC
-        (2) step_pin type=int , help=GPIO pin connected to STEP of IC
-        (3) mode_pins type=tuple of 2 ints, help=GPIO pins connected to
-        Microstep Resolution pins MS1-MS2 of IC, can be set to (-1,-1) to turn off
-        GPIO resolution.
-        """
-
-        self.direction_pin = direction_pin
-        self.step_pin = step_pin
-
-        if mode_pins[0] != -1:
-            self.mode_pins = mode_pins
-        else:
-            self.mode_pins = False
-
-        self.stop_motor = False
-        GPIO.setmode(GPIO.BCM)
-        GPIO.setwarnings(False)
-
-    def motor_stop(self):
-        """ Stop the motor """
-        self.stop_motor = True
-
-    def motor_move(
-        self,
-        stepdelay=0.05,
-        steps=200,
-        clockwise=False,
-        verbose=False,
-        steptype="Full",
-        initdelay=0.1,
-    ):
-        """ motor_move,  moves stepper motor based on 6 inputs
-         (1) stepdelay type=float, default=0.05, help=Time to wait
-         (in seconds) between steps.
-         (2) steps, type=int, default=200, help=Number of steps sequence's
-         to execute. Default is 200 ,
-         (3) clockwise, type=bool default=False
-         help="Turn stepper counterclockwise"
-         (4) verbose, type=bool  type=bool default=False
-         help="Write pin actions",
-         (5) steptype, type=string , default=Full help= type of drive to
-         step motor 4 options
-            (Full, Half, 1/4, 1/8)
-         (6) initdelay, type=float, default=1mS, help= Intial delay after
-         GPIO pins initialized but before motor is moved.
-        """
-
-        def ms_steps_pins():
-            """ Method to handle MS pins setup """
-            # dict resolution
-            resolution = {"Full": (0, 0), "Half": (1, 0), "1/4": (0, 1), "1/8": (1, 1)}
-            # error check stepmode input
-            if steptype in resolution:
-                pass
-            else:
-                print("Error invalid steptype: {}".format(steptype))
-                quit()
-
-            if self.mode_pins != False:
-                GPIO.output(self.mode_pins, resolution[steptype])
-
-        # setup GPIO
-        self.stop_motor = False
-        GPIO.setup(self.direction_pin, GPIO.OUT)
-        GPIO.setup(self.step_pin, GPIO.OUT)
-        GPIO.output(self.direction_pin, clockwise)
-
-        if self.mode_pins != False:
-            GPIO.setup(self.mode_pins, GPIO.OUT)
-
-        ms_steps_pins()
-        time.sleep(initdelay)
-
-        try:
-            for i in range(steps):
-                if self.stop_motor:
-                    raise StopMotorInterrupt
-                else:
-                    GPIO.output(self.step_pin, False)
-                    time.sleep(stepdelay)
-                    GPIO.output(self.step_pin, True)
-                    time.sleep(stepdelay)
-                    if verbose:
-                        print("Steps count {}".format(i + 1), end="\r", flush=True)
-
-        except KeyboardInterrupt:
-            print("User Keyboard Interrupt : RpiMotorLib:")
-        except StopMotorInterrupt:
-            print("Stop Motor Interrupt : RpiMotorLib: ")
-        except Exception as motor_error:
-            print(sys.exc_info()[0])
-            print(motor_error)
-            print("RpiMotorLib  : Unexpected error:")
-        else:
-            # print report status
-            if verbose:
-                print("\nRpiMotorLib, Motor Run finished, Details:.\n")
-                print("Clockwise = {}".format(clockwise))
-                print("Step Type = {}".format(steptype))
-                print("Number of steps = {}".format(steps))
-                print("Step Delay = {}".format(stepdelay))
-                print("Intial delay = {}".format(initdelay))
-                print(
-                    "Size of turn in degrees = {}".format(degree_calc(steps, steptype))
-                )
-        finally:
-            # cleanup
-            GPIO.output(self.step_pin, False)
-            GPIO.output(self.direction_pin, False)
-            if self.mode_pins != False:
-                for pin in self.mode_pins:
-                    GPIO.output(pin, False)
 
 
 def degree_calc(steps, steptype):
@@ -494,6 +282,22 @@ def degree_calc(steps, steptype):
     }
     degree_value = steps * degree_value[steptype]
     return degree_value
+
+
+def steps_calc(degree, steptype):
+    degree_value = {
+        "Full": 1.8,
+        "Half": 0.9,
+        "1/4": 0.45,
+        "1/8": 0.225,
+        "1/16": 0.1125,
+        "1/32": 0.05625,
+        "1/64": 0.028125,
+        "1/128": 0.0140625,
+    }
+    degree_value = 7.2
+    steps = degree / degree_value
+    return steps
 
 
 def importtest(text):

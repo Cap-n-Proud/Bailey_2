@@ -1,0 +1,9 @@
+[0.000000] (-) TimerEvent: {}
+[0.001261] (-) JobUnselected: {'identifier': 'camera'}
+[0.001956] (-) JobUnselected: {'identifier': 'camera_pan_tilt'}
+[0.002939] (-) JobUnselected: {'identifier': 'jetbot_sys_info'}
+[0.003127] (-) JobUnselected: {'identifier': 'ros2_rtimulib'}
+[0.003387] (bailey_drive) JobQueued: {'identifier': 'bailey_drive', 'dependencies': OrderedDict()}
+[0.003548] (bailey_drive) JobStarted: {'identifier': 'bailey_drive'}
+[0.112328] (-) TimerEvent: {}
+[0.214577] (-) TimerEvent: {}

@@ -123,7 +123,6 @@ class BYJMotor(object):
                 #  To run motor in reverse we flip the sequence order.
                 # if ccwise:
                 step_sequence.reverse()
-                print("reversed")
 
             def display_degree():
                 """ display the degree value at end of run if verbose"""

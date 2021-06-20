@@ -38,16 +38,34 @@ class BYJMotor(object):
     """class to control a 28BYJ-48 stepper motor with ULN2003 controller
     by a raspberry pi"""
 
-    def __init__(self, name="BYJMotorX", motor_type="28BYJ"):
+    def __init__(self, name="BYJMotorX", motor_type="28BYJ", max_speed=0.002):
         self.name = name
         self.motor_type = motor_type
         GPIO.setmode(GPIO.BOARD)
         GPIO.setwarnings(False)
         self.stop_motor = False
+        self.max_speed = max_speed
 
     def motor_stop(self):
         """ Stop the motor """
         self.stop_motor = True
+
+    # Need to update this to start a thread wit the motor name
+    def motor_run_nb(
+        self,
+        gpiopins,
+        wait=0.002,
+        steps=512,
+        ccwise=False,
+        verbose=False,
+        steptype="half",
+        initdelay=0.001,
+    ):
+        t = threading.Thread(
+            target=self.motor_run, args=(GpioPins_MA, s, 200, True, False, "full", 1)
+        )
+        # motor_A.motor_run(GpioPins_MA, s, 200, True, True, "full", 1)
+        t.start()
 
     def motor_run(
         self,
@@ -123,7 +141,6 @@ class BYJMotor(object):
                 #  To run motor in reverse we flip the sequence order.
                 # if ccwise:
                 step_sequence.reverse()
-                print("reversed")
 
             def display_degree():
                 """ display the degree value at end of run if verbose"""
