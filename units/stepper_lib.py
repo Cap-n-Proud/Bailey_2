@@ -107,6 +107,10 @@ class Stepper(object):
         (a1, a2), (b1, b2) = a, b
         return b1 + ((s - a1) * (b2 - b1) / (a2 - a1))
 
+    # TODO: see if it si possible to create a threaded motor
+    def motor_thread(self):
+        print(self)
+
     def motor_run(self, ccwise=False, verbose=False, steptype="full", initdelay=0.001):
         motor_run_start = time.time()
         # Needs to be called in a loop. It checks if a step is due
@@ -239,7 +243,6 @@ class Stepper(object):
                     self.current_pos += 1
                 self.lastStepTime = time.time()
             else:
-                # print("Motor stop:" + str(self.name))
                 return False
 
         except KeyboardInterrupt:
