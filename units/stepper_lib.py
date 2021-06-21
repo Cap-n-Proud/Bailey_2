@@ -1,35 +1,26 @@
 #!/usr/bin/env python3
+
+# https://www.airspayce.com/mikem/arduino/AccelStepper/
 """A python 3 library for various
  motors and servos to connect to a raspberry pi"""
 # ========================= HEADER ===================================
-# title             :rpiMotorlib.py
-# description       :A python 3 library for various motors
-# and servos to connect to a raspberry pi
-# This file is for stepper motor tested on
-# 28BYJ-48 unipolar stepper motor with ULN2003  = BYJMotor class
-# Bipolar Nema stepper motor with L298N = BYJMotor class.
-# Bipolar Nema Stepper motor TB6612FNG = BYJMotor class
-# Bipolar Nema Stepper motor A4988  Driver = A4988Nema class
-# Bipolar Nema Stepper motor DRV8825 Driver = A4988Nema class
-# Bipolar Nema Stepper motor LV8729  Driver = A4988Nema class
-# Bipolar Nema Stepper motor A3967 Easy Driver = A3967EasyNema class
-# Main author       :Gavin Lyons
+# title             :pi_stepper.py
+# description       :A python 3 library for stepper
+# motors to connect to a raspberry pi
+# Main author       :Paolo Negrini
 # Version           :See changelog at url
-# url               :https://github.com/gavinlyonsrepo/RpiMotorLib
-# mail              :glyons66@hotmail.com
+# credit            :https://github.com/gavinlyonsrepo/RpiMotorLib
+# credit            :https://www.airspayce.com/mikem/arduino/AccelStepper/
+# mail              :
 # python_version    :3.5.3
 
 # ========================== IMPORTS ======================
-# Import the system modules needed to run rpiMotorlib.py
+# Import the system modules needed to run pi_stepper.py
 import sys
 import time
 import RPi.GPIO as GPIO
 
 # ==================== CLASS SECTION ===============================
-
-# TODO: NEED TO CHNAGE LOGIC TO SET TARGET AND THEN RUN A STEP AT THE TIME; TARGET ANS SEPEED WILL CHANGE CONTINUSLY.
-# THIS WILL AVOUD MANGING A FILO QUEQUE
-# setSpeed
 
 
 class StopMotorInterrupt(Exception):
@@ -116,7 +107,7 @@ class Stepper(object):
         (a1, a2), (b1, b2) = a, b
         return b1 + ((s - a1) * (b2 - b1) / (a2 - a1))
 
-    def motor_run(self, ccwise=False, verbose=False, steptype="full", initdelay=0):
+    def motor_run(self, ccwise=False, verbose=False, steptype="full", initdelay=0.001):
         motor_run_start = time.time()
         # Needs to be called in a loop. It checks if a step is due
         """Runs motor until target position is reached. Need to be called in a loop as it moves one step

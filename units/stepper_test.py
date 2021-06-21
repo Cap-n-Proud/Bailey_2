@@ -22,16 +22,69 @@ def main():
 
     # ====== tests for motor L298STepTest ====
 
+    print("Test #1: run two motors simultaneously")
     motor_A.set_target(300)
     motor_A.set_speed(255)
     motor_B.set_target(-300)
     motor_B.set_speed(255)
-    # while motor_A.steps_to_go() > 0:
+    i = 0
     while 1:
         motor_A.motor_run(verbose=False)
-        motor_B.motor_run(verbose=False)
-        # print(motor_B.motor_name(), motor_B.steps_to_go())
-        # print(motor_A.motor_name(), motor_A.steps_to_go())
+        # motor_B.motor_run(verbose=False)
+        i += 1
+        if i == 20000:
+            motor_A.set_target(500)
+            motor_A.set_speed(255)
+        print(
+            motor_A.motor_name(),
+            motor_A.steps_to_go(),
+            motor_A.motor_run_loop_time(),
+            motor_B.motor_name(),
+            motor_B.steps_to_go(),
+            motor_B.motor_run_loop_time(),
+        )
+
+    time.sleep(1)
+    # print("Test #2: change target in the middle of the test")
+    # motor_A.set_target(100)
+    # motor_A.set_speed(100)
+    # motor_B.set_target(-300)
+    # motor_B.set_speed(255)
+    # i = 0
+    # while i < 500:
+    #     motor_A.motor_run(verbose=False)
+    #     if i == 50:
+    #         motor_A.set_target(200)
+    #     motor_B.motor_run(verbose=False)
+    #     i += 1
+    #     # print(
+    #     #     motor_A.motor_name(),
+    #     #     motor_A.steps_to_go(),
+    #     #     motor_B.motor_name(),
+    #     #     motor_B.steps_to_go(),
+    #     # )
+    #
+    # time.sleep(1)
+    # print("Test #3: change target in the middle of the test")
+    # motor_A.set_target(100)
+    # motor_A.set_speed(100)
+    # motor_B.set_target(-300)
+    # motor_B.set_speed(255)
+    # i = 0
+    # while i < 500:
+    #     motor_A.motor_run(verbose=False)
+    #     if i == 50:
+    #         motor_A.set_speed(1)
+    #         motor_A.set_target(200)
+    #
+    #     motor_B.motor_run(verbose=False)
+    #     i += 1
+    #     # print(
+    #     #     motor_A.motor_name(),
+    #     #     motor_A.steps_to_go(),
+    #     #     motor_B.motor_name(),
+    #     #     motor_B.steps_to_go(),
+    #     # )
 
 
 # ===================MAIN===============================
