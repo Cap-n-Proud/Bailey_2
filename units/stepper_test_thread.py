@@ -3,7 +3,7 @@
 
 import time
 
-import stepper_lib as s
+import py_stepper as s
 import threading
 
 # from stepper_lib import RpiMotorLib
@@ -34,6 +34,13 @@ def main():
     # Started the threads
     t2.start()
 
+    print("Test #0: move 90°")
+    motor_A.set_target(90)
+    motor_A.set_speed(100)
+    motor_B.set_target(-90)
+    motor_B.set_speed(100)
+
+    time.sleep(5)
     print("Test #1: run two motors simultaneously")
     motor_A.set_target(300)
     motor_A.set_speed(255)
@@ -50,7 +57,7 @@ def main():
 
     time.sleep(3)
     motor_A.set_target(0)
-    motor_A.set_speed(255)
+    motor_A.set_speed(100)
 
     print("Test #4: slow MB")
 

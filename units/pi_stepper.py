@@ -38,6 +38,7 @@ class Stepper(object):
         max_speed=0.002,
         min_speed=0.06,
         move_units="d",
+        steptype="half",
         simulation=False,
     ):
         self.name = name
@@ -49,8 +50,8 @@ class Stepper(object):
         self.speed_lib_range = [0, 255]
         self.target = 0
         self.current_pos = 0
-        self.deg_per_step = 7.2
-        self.steps_per_rev = int(360 / self.deg_per_step)
+        # self.deg_per_step = 7.2
+        # self.steps_per_rev = int(360 / self.deg_per_step)
         self.step_angle = 0  # Assume the way it is pointing is zero degrees
         self.stepInterval = 0
         self.lastStepTime = 0
@@ -59,6 +60,7 @@ class Stepper(object):
         self.gpiopins = gpiopins
         self.simulation = simulation
         self.m_run_time = 0
+        self.steptype = steptype
 
     def motor_run_loop_time(self):
         return self.m_run_time
@@ -68,7 +70,7 @@ class Stepper(object):
 
     def steps_to_go(self):
         # NOTE: now accurate for full step, need probably oto condier microsteps etc
-        return int(abs(self.target - self.current_pos))
+        return self.target - self.current_pos
 
     def is_step_due(self):
         if time.time() - self.lastStepTime <= self.stepInterval:
@@ -78,7 +80,7 @@ class Stepper(object):
 
     def set_target(self, t):
         if self.move_units == "d":
-            self.target = steps_calc(t, "Full")
+            self.target = steps_calc(t, self.steptype)
 
         else:
             self.target = t
@@ -107,7 +109,7 @@ class Stepper(object):
         (a1, a2), (b1, b2) = a, b
         return b1 + ((s - a1) * (b2 - b1) / (a2 - a1))
 
-    def motor_run(self, ccwise=False, verbose=False, steptype="full", initdelay=0.001):
+    def motor_run(self, ccwise=False, verbose=False, initdelay=0.001):
         motor_run_start = time.time()
         # Needs to be called in a loop. It checks if a step is due
         """Runs motor until target position is reached. Need to be called in a loop as it moves one step
@@ -182,7 +184,7 @@ class Stepper(object):
 
             # select step based on user input
             # Each step_sequence is a list containing GPIO pins that should be set to High
-            if steptype == "half":  # half stepping.
+            if self.steptype == "half":  # half stepping.
                 step_sequence = list(range(0, 8))
                 step_sequence[0] = [self.gpiopins[0]]
                 step_sequence[1] = [self.gpiopins[0], self.gpiopins[1]]
@@ -192,13 +194,15 @@ class Stepper(object):
                 step_sequence[5] = [self.gpiopins[2], self.gpiopins[3]]
                 step_sequence[6] = [self.gpiopins[3]]
                 step_sequence[7] = [self.gpiopins[3], self.gpiopins[0]]
-            elif steptype == "full":  # full stepping.
+                self.step_size = 0.5
+            elif self.steptype == "full":  # full stepping.
                 step_sequence = list(range(0, 4))
                 step_sequence[0] = [self.gpiopins[0], self.gpiopins[1]]
                 step_sequence[1] = [self.gpiopins[1], self.gpiopins[2]]
                 step_sequence[2] = [self.gpiopins[2], self.gpiopins[3]]
                 step_sequence[3] = [self.gpiopins[0], self.gpiopins[3]]
-            elif steptype == "wave":  # wave driving
+                self.step_size = 1
+            elif self.steptype == "wave":  # wave driving
                 step_sequence = list(range(0, 4))
                 step_sequence[0] = [self.gpiopins[0]]
                 step_sequence[1] = [self.gpiopins[1]]
@@ -208,35 +212,34 @@ class Stepper(object):
             else:
                 print("Error: unknown step type ; half, full or wave")
                 quit()
-            if self.target < 0:
+            steps_remaining = self.steps_to_go() / 4
+            if steps_remaining < 0:
                 ccwise = True
                 #  To run motor in reverse we flip the sequence order.
                 step_sequence.reverse()
 
             # Iterate through the pins turning them on and off.
 
-            steps_remaining = self.steps_to_go()
             # if there are steps remaining we move
             # print(self.name, self.current_pos, self.target, steps_remaining)
 
-            if steps_remaining >= 0 and self.is_step_due():
+            if abs(steps_remaining) > self.step_size:  # and self.is_step_due():
                 for pin_list in step_sequence:
                     for pin in self.gpiopins:
                         if self.stop_motor:
                             raise StopMotorInterrupt
                         else:
-                            if pin in pin_list:
-                                if not self.simulation:
-                                    GPIO.output(pin, True)
+                            if pin in pin_list and not self.simulation:
+                                GPIO.output(pin, True)
                             else:
                                 GPIO.output(pin, False)
                     # print_status(pin_list)
                     # Need to change the mapping below to control speed, acceleration etc
                     time.sleep(self.stepInterval)
                 if ccwise:
-                    self.current_pos -= 1
+                    self.current_pos -= self.step_size
                 else:
-                    self.current_pos += 1
+                    self.current_pos += self.step_size
                 self.lastStepTime = time.time()
             else:
                 # print("Motor stop:" + str(self.name))
@@ -278,7 +281,7 @@ class Stepper(object):
                 display_degree()
                 print("Counter clockwise = {}".format(ccwise))
                 print("Verbose  = {}".format(verbose))
-                print("Steptype = {}".format(steptype))
+                print("Steptype = {}".format(self.steptype))
         self.m_run_time = time.time() - motor_run_start
 
 
@@ -286,8 +289,8 @@ def degree_calc(steps, steptype):
     """ calculate and returns size of turn in degree
     , passed number of steps and steptype"""
     degree_value = {
-        "Full": 1.8,
-        "Half": 0.9,
+        "full": 1.8,
+        "half": 0.9,
         "1/4": 0.45,
         "1/8": 0.225,
         "1/16": 0.1125,
@@ -301,8 +304,8 @@ def degree_calc(steps, steptype):
 
 def steps_calc(degree, steptype):
     degree_value = {
-        "Full": 7.2,  #
-        "Half": 0.9,
+        "full": 1.8,  #
+        "half": 0.9,
         "1/4": 0.45,
         "1/8": 0.225,
         "1/16": 0.1125,

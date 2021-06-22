@@ -60,35 +60,18 @@ def main():
             + str(len(threading.enumerate()))
         )
 
-        t1 = threading.Thread(
-            name="MA",
-            target=motor_A.motor_run,
-            args=(GpioPins_MA, s * 255 / max_interactions, 10, True, False, "full", 1),
-        )
-        # motor_A.motor_run(GpioPins_MA, s, 200, True, True, "full", 1)
-        t1.start()
-        t2 = threading.Thread(
-            name="MB",
-            target=motor_B.motor_run,
-            args=(GpioPins_MB, -s * 255 / max_interactions, 10, True, False, "full", 1),
-        )
-        t2.start()
-        time.sleep(1.01)
-        motor_A.motor_stop()
-        motor_B.motor_stop()
+    for s in range(0, 6):
+        print("Speed: " + str(s * 51) + " T: " + str(len(threading.enumerate())))
 
-    # for s in range(0, 6):
-    #     print("Speed: " + str(s * 51) + " T: " + str(len(threading.enumerate())))
-    #
-    #     motor_B.motor_run(GpioPins_MB, -s * 51, 100, True, False, "full", 1)
-    # for s in speed:
-    #     input("Press <Enter> to continue Test. Speed: " + str(s))
-    #     motor_A.motor_run(GpioPins_MA, s, 200, True, True, "wave", 1)
-    #     time.sleep(1)
-    # for s in speed_h:
-    #     input("Press <Enter> to continue Test. Speed: " + str(s))
-    #     motor_A.motor_run(GpioPins_MA, s, 100, True, True, "half", 1)
-    #     time.sleep(1)
+        motor_B.motor_run(GpioPins_MB, -s * 51, 100, True, False, "full", 1)
+    for s in speed:
+        input("Press <Enter> to continue Test. Speed: " + str(s))
+        motor_A.motor_run(GpioPins_MA, s, 200, True, True, "wave", 1)
+        time.sleep(1)
+    for s in speed_h:
+        input("Press <Enter> to continue Test. Speed: " + str(s))
+        motor_A.motor_run(GpioPins_MA, s, 100, True, True, "half", 1)
+        time.sleep(1)
 
 
 """
