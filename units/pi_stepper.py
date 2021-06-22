@@ -55,8 +55,7 @@ class Stepper(object):
         self.step_angle = 0  # Assume the way it is pointing is zero degrees
         self.stepInterval = 0
         self.lastStepTime = 0
-        self.move_units = "d"
-        self.speed = 0.001
+        self.move_units = move_units
         self.gpiopins = gpiopins
         self.simulation = simulation
         self.m_run_time = 0
@@ -102,6 +101,11 @@ class Stepper(object):
     def motor_stop(self):
         """ Stop the motor """
         self.stop_motor = True
+
+    def pins_off(self):
+        # switch off pins at end
+        for pin in self.gpiopins:
+            GPIO.output(pin, False)
 
     def map_range(self, a, b, s):
         # a = [from_lower, from_upper]
@@ -194,7 +198,7 @@ class Stepper(object):
                 step_sequence[5] = [self.gpiopins[2], self.gpiopins[3]]
                 step_sequence[6] = [self.gpiopins[3]]
                 step_sequence[7] = [self.gpiopins[3], self.gpiopins[0]]
-                self.step_size = 0.5
+                self.step_size = 1
             elif self.steptype == "full":  # full stepping.
                 step_sequence = list(range(0, 4))
                 step_sequence[0] = [self.gpiopins[0], self.gpiopins[1]]
@@ -240,13 +244,14 @@ class Stepper(object):
                                 GPIO.output(pin, True)
                             else:
                                 GPIO.output(pin, False)
-                    # print_status(pin_list)
-                    # Need to change the mapping below to control speed, acceleration etc
+                    if ccwise:
+                        self.current_pos -= self.step_size
+                    else:
+                        self.current_pos += self.step_size
+                        # print_status(pin_list)
+                        # Need to change the mapping below to control speed, acceleration etc
                     time.sleep(self.stepInterval)
-                if ccwise:
-                    self.current_pos -= self.step_size
-                else:
-                    self.current_pos += self.step_size
+
                 self.lastStepTime = time.time()
             else:
                 return False
@@ -264,9 +269,7 @@ class Stepper(object):
             print("RpiMotorLib  : Unexpected error:")
 
         finally:
-            # switch off pins at end
-            for pin in self.gpiopins:
-                GPIO.output(pin, False)
+            self.pins_off()
             if verbose and steps_remaining == 1:
                 print("\nMotor Run finished, Details:.\n")
                 print("Motor name = {}".format(self.name))
