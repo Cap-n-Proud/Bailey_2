@@ -212,18 +212,25 @@ class Stepper(object):
             else:
                 print("Error: unknown step type ; half, full or wave")
                 quit()
-            steps_remaining = self.steps_to_go() / 4
+
+            steps_remaining = self.steps_to_go()
             if steps_remaining < 0:
                 ccwise = True
                 #  To run motor in reverse we flip the sequence order.
                 step_sequence.reverse()
 
-            # Iterate through the pins turning them on and off.
-
             # if there are steps remaining we move
-            # print(self.name, self.current_pos, self.target, steps_remaining)
+            print(
+                self.name,
+                self.current_pos,
+                self.target,
+                steps_remaining,
+                self.step_size,
+            )
 
-            if abs(steps_remaining) > self.step_size:  # and self.is_step_due():
+            if (
+                abs(steps_remaining) > self.step_size
+            ):  # self.step_size:  # and self.is_step_due():
                 for pin_list in step_sequence:
                     for pin in self.gpiopins:
                         if self.stop_motor:
@@ -242,7 +249,6 @@ class Stepper(object):
                     self.current_pos += self.step_size
                 self.lastStepTime = time.time()
             else:
-                # print("Motor stop:" + str(self.name))
                 return False
 
         except KeyboardInterrupt:
@@ -304,7 +310,7 @@ def degree_calc(steps, steptype):
 
 def steps_calc(degree, steptype):
     degree_value = {
-        "full": 1.8,  #
+        "full": 1.8,
         "half": 0.9,
         "1/4": 0.45,
         "1/8": 0.225,
@@ -313,8 +319,7 @@ def steps_calc(degree, steptype):
         "1/64": 0.028125,
         "1/128": 0.0140625,
     }
-    steps = degree / degree_value[steptype]
-    return steps
+    return degree / degree_value[steptype]
 
 
 def importtest(text):

@@ -34,12 +34,17 @@ def main():
 
     print("Test #1")
     motor_A.set_target(-30)
-    motor_A.set_speed(100)
+    motor_A.set_speed(200)
     i = 0
     while motor_A.steps_to_go():
         motor_A.motor_run(verbose=False)
         # motor_B.motor_run(verbose=False)
-        print(motor_A.motor_name(), motor_A.steps_to_go(), motor_A.target)
+        # print(
+        #     motor_A.motor_name(),
+        #     motor_A.steps_to_go(),
+        #     motor_A.target,
+        #     motor_A.step_size,
+        # )
 
     time.sleep(1)
 
