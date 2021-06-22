@@ -13,7 +13,7 @@ GpioPins_MA = [13, 11, 15, 12]
 # Declare an named instance of class pass a name and type of motor
 # type of motor(Nema) is case sensitive
 motor_A = s.Stepper(
-    "motor_A", "Nema", GpioPins_MA, max_speed, min_speed, "d", "half", False
+    "motor_A", "Nema", GpioPins_MA, max_speed, min_speed, "d", "half", True
 )
 #
 # name="BYJMotorX",

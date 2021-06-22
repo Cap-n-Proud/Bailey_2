@@ -16,10 +16,10 @@ GpioPins_MB = [37, 33, 35, 16]
 # type of motor(Nema) is case sensitive
 
 motor_A = s.Stepper(
-    "motor_A", "Nema", GpioPins_MA, max_speed, min_speed, "d", "half", False
+    "motor_A", "Nema", GpioPins_MA, max_speed, min_speed, "d", "half", True
 )
 motor_B = s.Stepper(
-    "motor_B", "Nema", GpioPins_MB, max_speed, min_speed, "d", "half", False
+    "motor_B", "Nema", GpioPins_MB, max_speed, min_speed, "d", "half", True
 )
 
 
@@ -37,15 +37,15 @@ def main():
     t1.start()
     t2 = threading.Thread(name="MB", target=thread_motor, args=("MB", motor_B))
     # Started the threads
-    t2.start()
+    # t2.start()
+    motor_A.set_speed(100)
+    # motor_B.set_speed(100)
 
     print("Test #0: move 90°")
     motor_A.set_target(45)
-    motor_A.set_speed(100)
-    motor_B.set_target(45)
-    motor_B.set_speed(100)
+    # motor_B.set_target(45)
 
-    time.sleep(5)
+    time.sleep(10)
 
 
 # ===================MAIN===============================
