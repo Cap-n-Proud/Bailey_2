@@ -1,15 +1,15 @@
 import RPi.GPIO as GPIO
 import time
 
-out1 = 13
-out2 = 11
-out3 = 15
-out4 = 12
-
 out1 = 40
 out2 = 38
 out3 = 36
 out4 = 32
+
+out1 = 13
+out2 = 11
+out3 = 15
+out4 = 12
 
 
 i = 0
