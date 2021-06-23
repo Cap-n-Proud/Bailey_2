@@ -50,8 +50,6 @@ class Stepper(object):
         self.speed_lib_range = [0, 255]
         self.target = 0
         self.current_pos = 0
-        # self.deg_per_step = 7.2
-        # self.steps_per_rev = int(360 / self.deg_per_step)
         self.step_angle = 0  # Assume the way it is pointing is zero degrees
         self.stepInterval = 0
         self.lastStepTime = 0
@@ -70,7 +68,6 @@ class Stepper(object):
         return str(self.name)
 
     def steps_to_go(self):
-        # NOTE: now accurate for full step, need probably oto condier microsteps etc
         return self.target - self.current_pos
 
     def is_step_due(self):
@@ -133,11 +130,11 @@ class Stepper(object):
         self.step_sequence_len = len(self.step_sequence)
         self.current_step_sequence = 0
 
-        print("-----------------------------------------------------")
-        print(self.step_sequence)
-        print(self.step_sequence[0])
-        for pin_list in self.step_sequence[self.current_step_sequence]:
-            print(pin_list)
+        # print("-----------------------------------------------------")
+        # print(self.step_sequence)
+        # print(self.step_sequence[0])
+        # for pin_list in self.step_sequence[self.current_step_sequence]:
+        #     print(pin_list)
 
     def motor_stop(self):
         """ Stop the motor """
@@ -154,7 +151,7 @@ class Stepper(object):
         (a1, a2), (b1, b2) = a, b
         return b1 + ((s - a1) * (b2 - b1) / (a2 - a1))
 
-    def motor_run(self, ccwise=False, verbose=False, initdelay=0.001):
+    def motor_run(self, ccwise=False, verbose=False, initdelay=0):
         motor_run_start = time.time()
         # Needs to be called in a loop. It checks if a step is due
         """Runs motor until target position is reached. Need to be called in a loop as it moves one step
@@ -293,6 +290,8 @@ class Stepper(object):
                             GPIO.output(pin, True)
                         else:
                             GPIO.output(pin, False)
+                # TODO: Can  change the mapping below to control speed, acceleration, etc
+                time.sleep(self.stepInterval)
                 self.current_step_sequence += 1
                 if self.current_step_sequence > self.step_sequence_len:
                     self.current_step_sequence = 0
@@ -301,10 +300,6 @@ class Stepper(object):
                 else:
                     self.current_pos += self.step_size
                     # print_status(pin_list)
-                    # Need to change the mapping below to control speed, acceleration etc
-                time.sleep(self.stepInterval)
-                # time.sleep(0.001)
-
                 self.lastStepTime = time.time()
             else:
                 return False

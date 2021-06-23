@@ -37,7 +37,6 @@ class Stepper(object):
         gpiopins=[0, 0, 0, 0],
         max_speed=0.002,
         min_speed=0.06,
-        steptype="half",
         move_units="d",
         simulation=False,
     ):
@@ -60,9 +59,6 @@ class Stepper(object):
         self.gpiopins = gpiopins
         self.simulation = simulation
         self.m_run_time = 0
-        self.steptype = steptype
-        self.step_sequence = 0
-        self.set_step_sequence()
 
     def motor_run_loop_time(self):
         return self.m_run_time
@@ -71,10 +67,8 @@ class Stepper(object):
         return str(self.name)
 
     def steps_to_go(self):
-        return self.target - self.current_pos
-
-    def show_pos(self):
-        return self.current_pos
+        # NOTE: now accurate for full step, need probably oto condier microsteps etc
+        return int(abs(self.target - self.current_pos))
 
     def is_step_due(self):
         if time.time() - self.lastStepTime <= self.stepInterval:
@@ -84,7 +78,8 @@ class Stepper(object):
 
     def set_target(self, t):
         if self.move_units == "d":
-            self.target = steps_calc(t, self.steptype)
+            self.target = steps_calc(t, "Full")
+
         else:
             self.target = t
 
@@ -94,9 +89,6 @@ class Stepper(object):
             self.speed_lib_range, self.speed_motor_range, self.speed
         )
 
-    def set_step_type(self, steptype):
-        self.step_type = steptype
-
     def set_move_units(self, mu):
         if mu == "d":
             self.move_units == "d"
@@ -104,45 +96,6 @@ class Stepper(object):
             self.move_units == "s"
         else:
             print("ERROR")
-
-    def set_step_sequence(self):
-        # Each step_sequence is a list containing GPIO pins that should be set to High
-        if self.steptype == "half":  # half stepping.
-            self.step_sequence = list(range(0, 8))
-            self.step_sequence[0] = [self.gpiopins[0]]
-            self.step_sequence[1] = [self.gpiopins[0], self.gpiopins[1]]
-            self.step_sequence[2] = [self.gpiopins[1]]
-            self.step_sequence[3] = [self.gpiopins[1], self.gpiopins[2]]
-            self.step_sequence[4] = [self.gpiopins[2]]
-            self.step_sequence[5] = [self.gpiopins[2], self.gpiopins[3]]
-            self.step_sequence[6] = [self.gpiopins[3]]
-            self.step_sequence[7] = [self.gpiopins[3], self.gpiopins[0]]
-            self.step_size = 0.5
-        elif self.steptype == "full":  # full stepping.
-            self.step_sequence = list(range(0, 4))
-            self.step_sequence[0] = [self.gpiopins[0], self.gpiopins[1]]
-            self.step_sequence[1] = [self.gpiopins[1], self.gpiopins[2]]
-            self.step_sequence[2] = [self.gpiopins[2], self.gpiopins[3]]
-            self.step_sequence[3] = [self.gpiopins[0], self.gpiopins[3]]
-            self.step_size = 1
-        elif self.steptype == "wave":  # wave driving
-            self.step_sequence = list(range(0, 4))
-            self.step_sequence[0] = [self.gpiopins[0]]
-            self.step_sequence[1] = [self.gpiopins[1]]
-            self.step_sequence[2] = [self.gpiopins[2]]
-            self.step_sequence[3] = [self.gpiopins[3]]
-
-        else:
-            print("Error: unknown step type ; half, full or wave")
-            quit()
-        self.step_sequence_len = len(self.step_sequence)
-        self.current_step_sequence = 0
-
-        print("-----------------------------------------------------")
-        print(self.step_sequence)
-        print(self.step_sequence[0])
-        for pin_list in self.step_sequence[self.current_step_sequence]:
-            print(pin_list)
 
     def motor_stop(self):
         """ Stop the motor """
@@ -154,11 +107,7 @@ class Stepper(object):
         (a1, a2), (b1, b2) = a, b
         return b1 + ((s - a1) * (b2 - b1) / (a2 - a1))
 
-    # TODO: see if it si possible to create a threaded motor
-    def motor_thread(self):
-        print(self)
-
-    def motor_run(self, ccwise=False, verbose=False, initdelay=0.001):
+    def motor_run(self, ccwise=False, verbose=False, steptype="full", initdelay=0.001):
         motor_run_start = time.time()
         # Needs to be called in a loop. It checks if a step is due
         """Runs motor until target position is reached. Need to be called in a loop as it moves one step
@@ -231,49 +180,66 @@ class Stepper(object):
                         else:
                             print("GPIO pin off {}".format(pin_print))
 
-            steps_remaining = self.steps_to_go() / 4
-            if steps_remaining < 0:
+            # select step based on user input
+            # Each step_sequence is a list containing GPIO pins that should be set to High
+            if steptype == "half":  # half stepping.
+                step_sequence = list(range(0, 8))
+                step_sequence[0] = [self.gpiopins[0]]
+                step_sequence[1] = [self.gpiopins[0], self.gpiopins[1]]
+                step_sequence[2] = [self.gpiopins[1]]
+                step_sequence[3] = [self.gpiopins[1], self.gpiopins[2]]
+                step_sequence[4] = [self.gpiopins[2]]
+                step_sequence[5] = [self.gpiopins[2], self.gpiopins[3]]
+                step_sequence[6] = [self.gpiopins[3]]
+                step_sequence[7] = [self.gpiopins[3], self.gpiopins[0]]
+            elif steptype == "full":  # full stepping.
+                step_sequence = list(range(0, 4))
+                step_sequence[0] = [self.gpiopins[0], self.gpiopins[1]]
+                step_sequence[1] = [self.gpiopins[1], self.gpiopins[2]]
+                step_sequence[2] = [self.gpiopins[2], self.gpiopins[3]]
+                step_sequence[3] = [self.gpiopins[0], self.gpiopins[3]]
+            elif steptype == "wave":  # wave driving
+                step_sequence = list(range(0, 4))
+                step_sequence[0] = [self.gpiopins[0]]
+                step_sequence[1] = [self.gpiopins[1]]
+                step_sequence[2] = [self.gpiopins[2]]
+                step_sequence[3] = [self.gpiopins[3]]
+
+            else:
+                print("Error: unknown step type ; half, full or wave")
+                quit()
+            if self.target < 0:
                 ccwise = True
                 #  To run motor in reverse we flip the sequence order.
-                self.step_sequence.reverse()
+                step_sequence.reverse()
 
             # Iterate through the pins turning them on and off.
 
+            steps_remaining = self.steps_to_go()
             # if there are steps remaining we move
-            if (steps_remaining) >= 0:  # and self.is_step_due():
-                print(
-                    # self.name,
-                    # self.current_pos,
-                    # steps_remaining,
-                    # self.target,
-                    self.current_step_sequence,
-                    self.step_sequence_len,
-                    self.step_sequence[self.current_step_sequence],
-                )
-                for pin in self.gpiopins:
-                    if self.stop_motor:
-                        raise StopMotorInterrupt
-                    else:
-                        if (
-                            pin in self.step_sequence[self.current_step_sequence]
-                            and not self.simulation
-                        ):
-                            GPIO.output(pin, True)
-                        else:
-                            GPIO.output(pin, False)
-                        time.sleep(0.0001)
-                # print_status(pin_list)
-                # TODO:Need to change the mapping below to control speed, acceleration etc
-                self.current_step_sequence += 1
-                if self.current_step_sequence > self.step_sequence_len - 1:
-                    self.current_step_sequence = 0
+            # print(self.name, self.current_pos, self.target, steps_remaining)
 
+            if steps_remaining >= 0 and self.is_step_due():
+                for pin_list in step_sequence:
+                    for pin in self.gpiopins:
+                        if self.stop_motor:
+                            raise StopMotorInterrupt
+                        else:
+                            if pin in pin_list:
+                                if not self.simulation:
+                                    GPIO.output(pin, True)
+                            else:
+                                GPIO.output(pin, False)
+                    # print_status(pin_list)
+                    # Need to change the mapping below to control speed, acceleration etc
+                    time.sleep(self.stepInterval)
                 if ccwise:
-                    self.current_pos -= self.step_size
+                    self.current_pos -= 1
                 else:
-                    self.current_pos += self.step_size
+                    self.current_pos += 1
                 self.lastStepTime = time.time()
             else:
+                # print("Motor stop:" + str(self.name))
                 return False
 
         except KeyboardInterrupt:
@@ -292,7 +258,6 @@ class Stepper(object):
             # switch off pins at end
             for pin in self.gpiopins:
                 GPIO.output(pin, False)
-
             if verbose and steps_remaining == 1:
                 print("\nMotor Run finished, Details:.\n")
                 print("Motor name = {}".format(self.name))
@@ -308,10 +273,8 @@ class Stepper(object):
                     + ")"
                 )
                 print("Number of step sequences = {}".format(self.target))
-                print("Size of step sequence = {}".format(len(self.step_sequence)))
-                print(
-                    "Number of steps = {}".format(self.target * len(self.step_sequence))
-                )
+                print("Size of step sequence = {}".format(len(step_sequence)))
+                print("Number of steps = {}".format(self.target * len(step_sequence)))
                 display_degree()
                 print("Counter clockwise = {}".format(ccwise))
                 print("Verbose  = {}".format(verbose))
@@ -338,8 +301,8 @@ def degree_calc(steps, steptype):
 
 def steps_calc(degree, steptype):
     degree_value = {
-        "full": 1.8,  #
-        "half": 0.9,
+        "Full": 7.2,  #
+        "Half": 0.9,
         "1/4": 0.45,
         "1/8": 0.225,
         "1/16": 0.1125,

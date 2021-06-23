@@ -32,8 +32,8 @@ def main():
 
     # ====== tests for motor L298STepTest ====
     print("Test #1")
-    motor_A.set_target(90)
-    motor_A.set_speed(255)
+    motor_A.set_target(180)
+    motor_A.set_speed(200)
     i = 0
     while 1:
         motor_A.motor_run(verbose=False)
