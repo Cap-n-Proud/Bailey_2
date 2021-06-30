@@ -2,7 +2,7 @@
 """ test example file for rpiMotorlib.py L298 stepper tests"""
 
 import time
-
+import random
 import pi_stepper as s
 
 # from stepper_lib import RpiMotorLib
@@ -34,15 +34,35 @@ def main():
     print("Test #1")
     motor_A.set_target(180)
     motor_A.set_speed(200)
-    i = 0
-    while 1:
-        motor_A.motor_run(verbose=False)
-        # print(
-        #     motor_A.motor_name(),
-        #     motor_A.steps_to_go(),
-        #     motor_A.target,
-        #     motor_A.step_size,
-        # )
+    time.sleep(2)
+    print("Test #1")
+    i = 1
+    speed = 255
+    counter = 0
+    # motor_A.move_speed_control(speed, True)
+    while i < 3000:
+        try:
+            motor_A.motor_run(verbose=False)
+            if counter == 500:
+                counter = 0
+                speed = 0.9 * speed
+                dir = random.choice(["True", "False"])
+                motor_A.move_speed_control(int(speed), dir)
+                print("----------------" + str(int(speed)) + " " + str(dir))
+                # time.sleep(3)
+                # print(
+            #     motor_A.motor_name(),
+            #     motor_A.steps_to_go(),
+            #     motor_A.target,
+            #     motor_A.step_size,
+            # )
+            counter += 1
+        except (KeyboardInterrupt, SystemExit):
+            print("\nkeyboardinterrupt caught (again)")
+            print("\n...Program Stopped Manually!")
+            motor_A.motorStop()
+
+            raise
 
     time.sleep(1)
 

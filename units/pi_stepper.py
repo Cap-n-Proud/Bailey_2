@@ -60,6 +60,8 @@ class Stepper(object):
         self.steptype = steptype
         self.step_sequence = 0
         self.set_step_sequence()
+        self.continuous_rotation = False
+        self.ccwise = False
 
     def motor_run_loop_time(self):
         return self.m_run_time
@@ -89,6 +91,11 @@ class Stepper(object):
             self.speed_lib_range, self.speed_motor_range, self.speed
         )
 
+    def move_speed_control(self, speed, ccwise):
+        self.set_speed(speed)
+        self.continuous_rotation = True
+        self.ccwise = ccwise
+
     def set_move_units(self, mu):
         if mu == "d":
             self.move_units == "d"
@@ -110,6 +117,7 @@ class Stepper(object):
             self.step_sequence[6] = [self.gpiopins[3]]
             self.step_sequence[7] = [self.gpiopins[3], self.gpiopins[0]]
             self.step_size = 0.5
+            self.step_sequence_len = 7
         elif self.steptype == "full":  # full stepping.
             self.step_sequence = list(range(0, 4))
             self.step_sequence[0] = [self.gpiopins[0], self.gpiopins[1]]
@@ -117,6 +125,7 @@ class Stepper(object):
             self.step_sequence[2] = [self.gpiopins[2], self.gpiopins[3]]
             self.step_sequence[3] = [self.gpiopins[0], self.gpiopins[3]]
             self.step_size = 1
+            self.step_sequence_len = 3
         elif self.steptype == "wave":  # wave driving
             self.step_sequence = list(range(0, 4))
             self.step_sequence[0] = [self.gpiopins[0]]
@@ -151,7 +160,7 @@ class Stepper(object):
         (a1, a2), (b1, b2) = a, b
         return b1 + ((s - a1) * (b2 - b1) / (a2 - a1))
 
-    def motor_run(self, ccwise=False, verbose=False, initdelay=0):
+    def motor_run(self, verbose=False, initdelay=0):
         motor_run_start = time.time()
         # Needs to be called in a loop. It checks if a step is due
         """Runs motor until target position is reached. Need to be called in a loop as it moves one step
@@ -224,6 +233,7 @@ class Stepper(object):
                         else:
                             print("GPIO pin off {}".format(pin_print))
 
+            # TODO: this should be moved to a function.
             # select step based on user input
             # Each step_sequence is a list containing GPIO pins that should be set to High
             if self.steptype == "half":  # half stepping.
@@ -259,22 +269,28 @@ class Stepper(object):
                 print("Error: unknown step type ; half, full or wave")
                 quit()
 
-            steps_remaining = self.steps_to_go()
-            if steps_remaining < 0:
-                ccwise = True
+            if self.continuous_rotation == False:
+                steps_remaining = self.steps_to_go()
+            else:
+                steps_remaining = 100
+                # print(self.ccwise)
+
+            if steps_remaining < 0 or self.ccwise == True:
+                print(self.ccwise)
+                self.ccwise = True
                 #  To run motor in reverse we flip the sequence order.
                 self.step_sequence.reverse()
 
-            # if there are steps remaining we move
-            print(
-                self.name,
-                self.current_pos,
-                self.target,
-                steps_remaining,
-                self.step_size,
-                self.step_sequence[self.current_step_sequence],
-            )
+            # print(
+            #     self.name,
+            #     self.current_pos,
+            #     self.target,
+            #     steps_remaining,
+            #     self.step_size,
+            #     self.step_sequence[self.current_step_sequence],
+            # )
 
+            # If there are steps remaining we move
             if (
                 abs(steps_remaining) >= self.step_size
             ):  # self.step_size:  # and self.is_step_due():
@@ -295,11 +311,11 @@ class Stepper(object):
                 self.current_step_sequence += 1
                 if self.current_step_sequence > self.step_sequence_len:
                     self.current_step_sequence = 0
-                if ccwise:
+                if self.ccwise:
                     self.current_pos -= self.step_size
                 else:
                     self.current_pos += self.step_size
-                    # print_status(pin_list)
+                # print_status(pin_list)
                 self.lastStepTime = time.time()
             else:
                 return False
@@ -338,7 +354,7 @@ class Stepper(object):
                     "Number of steps = {}".format(self.target * len(self.step_sequence))
                 )
                 display_degree()
-                print("Counter clockwise = {}".format(ccwise))
+                print("Counter clockwise = {}".format(self.ccwise))
                 print("Verbose  = {}".format(verbose))
                 print("Steptype = {}".format(self.steptype))
         self.m_run_time = time.time() - motor_run_start
@@ -373,6 +389,13 @@ def steps_calc(degree, steptype):
         "1/128": 0.0140625,
     }
     return degree / degree_value[steptype]
+
+
+def map_range(self, a, b, s):
+    # a = [from_lower, from_upper]
+    # b = [to_lower, to_upper]
+    (a1, a2), (b1, b2) = a, b
+    return b1 + ((s - a1) * (b2 - b1) / (a2 - a1))
 
 
 def importtest(text):
