@@ -41,6 +41,8 @@ class ES(object):
         self.current_pos = 0
         self.step_type = step_type
 
+        self.version = "1.0.0"
+
         gpio.setmode(gpio.BOARD)
         gpio.setwarnings(False)
 
@@ -73,9 +75,12 @@ class ES(object):
     def steps_to_go(self):
         return self.target - self.current_pos
 
+    def update_current_pos(self):
+        self.current_pos += self.direction
+
     def set_target(self, t):
         if self.move_units == "d":
-            self.target = steps_calc(t, self.steptype)
+            self.target = degrees_to_steps(t, self.steptype)
 
         else:
             self.target = t
@@ -87,37 +92,40 @@ class ES(object):
         gpio.output(self.pin_step, False)
         time.sleep(self.step_interval / 2)
         self.disable()
+        self.update_current_pos()
 
-    def step_to(self):
-        a = 1
-        # if if (
-        #     abs(steps_remaining) >= self.step_size
-        # ):  # self.step_size:  # and self.is_step_due():
-        #     # for pin_list in self.step_sequence:
-        #     for pin in self.gpiopins:
-        #         if self.stop_motor:
-        #             raise StopMotorInterrupt
-        #         else:
-        #             if (
-        #                 pin in self.step_sequence[self.current_step_sequence]
-        #                 and not self.simulation
-        #             ):
-        #                 GPIO.output(pin, True)
-        #             else:
-        #                 GPIO.output(pin, False)
-        #     # TODO: Can  change the mapping below to control speed, acceleration, etc
-        #     time.sleep(self.stepInterval)
-        #     self.current_step_sequence += 1
-        #     if self.current_step_sequence > self.step_sequence_len:
-        #         self.current_step_sequence = 0
-        #     if self.ccwise:
-        #         self.current_pos -= self.step_size
-        #     else:
-        #         self.current_pos += self.step_size
-        #     # print_status(pin_list)
-        #     self.lastStepTime = time.time()
-        # else:
-        #     return False
+    def set_move_units(self, mu):
+        if mu == "d":
+            self.move_units == "d"
+        elif mu == "s":
+            self.move_units == "s"
+        else:
+            print("ERROR")
+
+    def step_to_target(self):
+        steps_remaining = self.steps_to_go()
+
+        if abs(steps_remaining) >= self.step_size:
+            self.step()
+            self.set_direction(self.sign(steps_remaining))
+
+        else:
+            return False
+
+    def set_speed(self, s):
+        self.speed = s
+        self.step_interval = self.map_range(
+            self.speed_lib_range, self.speed_motor_range, self.speed
+        )
+
+    def set_direction(self, direction):
+        if direction == -1:
+            gpio.output(self.pin_direction, False)
+        else:
+            gpio.output(self.pin_direction, True)
+
+    def finish(self):
+        gpio.cleanup()
 
     def set_step_type(self, step_type):
         if self.steptype == "half":
@@ -149,6 +157,12 @@ class ES(object):
     def motor_name(self):
         return str(self.name)
 
+    def current_pos(self):
+        return str(self.current_pos)
+
+    def reset_current_pos(self):
+        self.current_pos = 0
+
     def sleep(self):
         gpio.output(self.pin_sleep, False)
 
@@ -172,7 +186,7 @@ class ES(object):
         (a1, a2), (b1, b2) = a, b
         return b1 + ((s - a1) * (b2 - b1) / (a2 - a1))
 
-    def steps_calc(degree, step_type):
+    def degrees_to_steps(self, degree, step_type):
         degree_value = {
             "full": 1.8,
             "half": 0.9,
@@ -185,17 +199,5 @@ class ES(object):
         }
         return degree / degree_value[step_type]
 
-    def set_speed(self, s):
-        self.speed = s
-        self.step_interval = self.map_range(
-            self.speed_lib_range, self.speed_motor_range, self.speed
-        )
-
-    def set_direction(self, direction):
-        if direction == -1:
-            gpio.output(self.pin_direction, False)
-        else:
-            gpio.output(self.pin_direction, True)
-
-    def finish(self):
-        gpio.cleanup()
+    def sign(self, a):
+        return (a > 0) - (a < 0)
