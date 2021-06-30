@@ -104,11 +104,10 @@ class ES(object):
 
     def step_to_target(self):
         steps_remaining = self.steps_to_go()
-
         if abs(steps_remaining) >= self.step_size:
-            self.step()
             self.set_direction(self.sign(steps_remaining))
-
+            self.step()
+            self.update_current_pos()
         else:
             return False
 
