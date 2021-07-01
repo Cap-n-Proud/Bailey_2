@@ -82,7 +82,7 @@ en = 33
 step = 29
 dir = 31
 
-motor_A = es.ES("motor_A", False, step, dir, en, 0.0002, 0.02)
+motor_A = es.ES("motor_A", False, step, dir, en, 0.00001, 0.02)
 motor_A.set_speed(200)
 motor_A.disable()
 for i in range(1, 100):
